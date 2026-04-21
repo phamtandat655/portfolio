@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pham Tan Dat — Backend Java Engineer</title>
+    <title>Pham Tan Dat — Backend Developer</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet" />
@@ -594,7 +594,7 @@
 
         .bar-row span:first-child {
             color: var(--muted);
-            width: 115px;
+            width: 150px;
             flex-shrink: 0
         }
 
@@ -664,75 +664,7 @@
             word-break: break-all
         }
 
-        /* SUBSCRIBE */
-        .subscribe-wrap {
-            max-width: 560px;
-            margin: 0 auto
-        }
-
-        .subscribe-box {
-            background: linear-gradient(135deg, rgba(91, 79, 255, .07), rgba(167, 154, 255, .1));
-            border: 1.5px solid rgba(91, 79, 255, .2);
-            border-radius: 20px;
-            padding: 2.75rem 2.5rem;
-            text-align: center
-        }
-
-        .subscribe-box h3 {
-            font-size: 1.45rem;
-            font-weight: 800;
-            letter-spacing: -.03em;
-            margin-bottom: .5rem
-        }
-
-        .subscribe-box p {
-            font-size: .88rem;
-            color: var(--muted);
-            margin-bottom: 1.75rem
-        }
-
-        .sub-form {
-            display: flex;
-            gap: .7rem;
-            flex-wrap: wrap;
-            justify-content: center
-        }
-
-        .sub-input {
-            flex: 1;
-            min-width: 210px;
-            background: var(--surface);
-            border: 1.5px solid var(--border);
-            border-radius: 10px;
-            padding: .62rem 1rem;
-            font-family: 'Sora', sans-serif;
-            font-size: .87rem;
-            color: var(--text);
-            outline: none;
-            transition: border-color .2s
-        }
-
-        .sub-input::placeholder {
-            color: var(--muted)
-        }
-
-        .sub-input:focus {
-            border-color: var(--accent)
-        }
-
-        .sub-note {
-            font-size: .73rem;
-            color: var(--muted);
-            margin-top: .85rem
-        }
-
-        #sub-msg {
-            font-size: .82rem;
-            font-weight: 600;
-            margin-top: .65rem
-        }
-
-        /* DOCS */
+        /* FOOTER */
         .docs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
@@ -819,11 +751,12 @@
     <nav>
         <div class="nav-logo">tandat.dev</div>
         <ul class="nav-links">
+            <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#story">Career</a></li>
-            <li><a href="#about">About</a></li>
             <li><a href="#docs">Docs</a></li>
+            <li><a href="#story">Career</a></li>
+            <li><a href="#cv">Resume</a></li>
             <li><a href="#contact" class="nav-cta">Contact</a></li>
         </ul>
     </nav>
@@ -835,10 +768,11 @@
         <div class="hero-inner">
             <div class="status-pill"><span class="pulse"></span>Open to new opportunities</div>
             <h1>Pham Tan Dat</h1>
-            <p class="hero-role">Backend Java Engineer · Service Lifecycle Specialist</p>
-            <p class="hero-desc">Building scalable platforms across domain, cloud, healthcare &amp; SPA at Long Van
-                System Solutions. Passionate about service lifecycle design, unified system architecture, and resource
-                optimization.</p>
+            <p class="hero-role">Backend Developer · Service Lifecycle Specialist</p>
+            <p class="hero-desc">Backend Developer focused on service lifecycle systems across cloud, domain, and
+                subscription platforms.
+                Experienced in unifying multi-domain service models and building scalable backend systems with Spring
+                Boot.</p>
             <div class="hero-btns">
                 <a href="#projects" class="btn btn-primary">
                     <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -871,22 +805,64 @@
 
     <hr class="div" />
 
+    <!-- ABOUT -->
+    <section class="sec" id="about">
+        <h2>About</h2>
+        <p class="sec-sub">A quick snapshot of who I am outside the code.</p>
+        <div class="about-grid">
+            <div class="about-card">
+                <h3>Personal Info</h3>
+                <p>📞 <a href="tel:0394047655">0394 047 655</a></p>
+                <p>✉️ <a href="mailto:phamtandat655@gmail.com">phamtandat655@gmail.com</a></p>
+                <p>📍 Quận 5, Ho Chi Minh City</p>
+            </div>
+            <div class="about-card">
+                <h3>🎓 Education</h3>
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem">
+                    <div style="width: 100%;display: flex;justify-content: space-between;align-items: center;">
+                        <p style="font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.2rem">Sai Gon
+                            University
+                        </p>
+                        <div style="font-size:1rem;font-weight:700;color:var(--accent);line-height:1">
+                            GPA 3.1 / 4.0
+                        </div>
+                    </div>
+                    <div>
+
+                        <p style="color:var(--accent2);font-size:.88rem;font-weight:600;margin-bottom:.5rem">Bachelor of
+                            Software Engineering &nbsp;·&nbsp; Nov 2025</p>
+                        <p style="font-size:.83rem;color:var(--muted);max-width:560px;line-height:1.7">Studied core
+                            computer
+                            science fundamentals including data structures, algorithms, databases, and software
+                            engineering
+                            principles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <hr class="div" />
+
     <!-- SKILLS -->
     <section class="sec" id="skills">
-        <!-- <p class="sec-label">// 01 — my skills</p> -->
-        <h2>Tech Stack</h2>
-        <p class="sec-sub">Languages, frameworks, databases and tools I work with daily.</p>
+        <h2>Skills</h2>
+        <p class="sec-sub">Technical stack, domain expertise, and language proficiency.</p>
+
+        <h3 style="margin-bottom: 5px;">Technical Skills</h3>
         <div class="skills-grid">
             <div class="skill-cat">
                 <div class="skill-cat-icon">☕</div>
                 <h3>Languages</h3>
-                <div class="tags"><span class="tag hi">Java</span><span class="tag">JavaScript</span></div>
+                <div class="tags"><span class="tag hi">Java</span><span class="tag">JavaScript</span>
+                </div>
             </div>
             <div class="skill-cat">
                 <div class="skill-cat-icon">🌱</div>
                 <h3>Backend</h3>
                 <div class="tags"><span class="tag hi">Spring Boot</span><span class="tag hi">Spring MVC</span><span
-                        class="tag">Spring</span></div>
+                        class="tag">Spring</span><span class="tag">JSF / PrimeFaces</span></div>
             </div>
             <div class="skill-cat">
                 <div class="skill-cat-icon">⚛️</div>
@@ -911,13 +887,40 @@
                         class="tag">ArgoCD</span><span class="tag">Git</span></div>
             </div>
         </div>
+
+        <br />
+        <h3 style="margin-bottom: 5px;">Language Skills</h3>
+        <div class="skills-grid">
+            <div class="skill-cat" style="grid-column:1/-1;">
+                <h3>English Proficiency — TOEIC</h3>
+                <div style="display:grid; margin-top:.5rem">
+                    <div>
+                        <div class="bar-row"><span>Reading / Listening</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width:57%"></div>
+                            </div><span class="val">755/990</span>
+                        </div>
+                        <div class="bar-row"><span>Speaking</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width:40%"></div>
+                            </div><span class="val">120/200</span>
+                        </div>
+                        <div class="bar-row"><span>Writing</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width:60%"></div>
+                            </div><span class="val">160/200</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
     </section>
 
     <hr class="div" />
 
     <!-- PROJECTS -->
     <section class="sec" id="projects">
-        <!-- <p class="sec-label">// 02 — my projects</p> -->
         <h2>What I've Built</h2>
         <p class="sec-sub">Key systems across domain, cloud, healthcare, and SPA domains — all with API + admin portal
             delivery.</p>
@@ -936,14 +939,14 @@
                 <div class="proj-title">DataCenter Migration v1→v2</div>
                 <div class="proj-desc">Automation APIs and workflows for VM data center migration. Managed VM lifecycle:
                     provisioning, resource reservation, password reset, automated deployment pipelines — significantly
-                    reducing manual operations.</div>
+                    reducing manual operations and improving deployment consistency across environments.</div>
                 <div class="proj-tags"><span class="tag hi">Spring Boot</span><span class="tag">CI/CD</span><span
                         class="tag">VM Mgmt</span><span class="tag">Automation</span></div>
             </div>
             <div class="proj-card">
                 <div><span class="proj-badge badge-cloud">⚙️ Platform</span></div>
-                <div class="proj-title">Unified Service Lifecycle Engine</div>
-                <div class="proj-desc">As the sole developer, redesigned and unified service modules (scaling, plan
+                <div class="proj-title">Service Lifecycle Refactoring & Unification</div>
+                <div class="proj-desc">Played a key role in refactoring and unifying service modules (scaling, plan
                     upgrade/downgrade, renewal, resource usage) across cloud, healthcare, and SPA — eliminating domain
                     silos into one coherent engine.</div>
                 <div class="proj-tags"><span class="tag hi">Spring Boot</span><span class="tag">Multi-domain</span><span
@@ -982,9 +985,54 @@
 
     <hr class="div" />
 
+    <!-- DOCS -->
+    <section class="sec" id="docs">
+        <h2>Technical Notes</h2>
+        <p class="sec-sub">Concepts, patterns, and learnings from building real production systems.</p>
+        <div class="docs-grid">
+            <div class="doc-card">
+                <div class="doc-icon">🔄</div>
+                <div class="doc-title">Service Lifecycle Design Patterns</div>
+                <div class="doc-desc">Modeling service states (pending → active → expired → cancelled) consistently
+                    across cloud, healthcare, and SPA using a unified engine.</div>
+            </div>
+            <div class="doc-card">
+                <div class="doc-icon">🏗️</div>
+                <div class="doc-title">Multi-tenant Subscription Architecture</div>
+                <div class="doc-desc">Designing subscription systems handling personal, family, and enterprise tiers
+                    with benefit tracking, quota management, and sub-subscription delegation.</div>
+            </div>
+            <div class="doc-card">
+                <div class="doc-icon">☁️</div>
+                <div class="doc-title">VM Lifecycle &amp; DC Migration</div>
+                <div class="doc-desc">Automating VM provisioning, resource reservation, and zero-downtime data center
+                    version migrations in production cloud environments.</div>
+            </div>
+            <div class="doc-card">
+                <div class="doc-icon">🌐</div>
+                <div class="doc-title">Domain Registration with VNNIC</div>
+                <div class="doc-desc">eKYC verification, domain registration flows, and renewal management in compliance
+                    with VNNIC registrar requirements.</div>
+            </div>
+            <div class="doc-card">
+                <div class="doc-icon">🔌</div>
+                <div class="doc-title">REST API for Admin Portals + Apps</div>
+                <div class="doc-desc">Building consistent REST APIs that serve both internal admin portals
+                    (JSF/PrimeFaces) and external frontend apps simultaneously.</div>
+            </div>
+            <div class="doc-card">
+                <div class="doc-icon">💬</div>
+                <div class="doc-title">Real-time Systems with WebSocket</div>
+                <div class="doc-desc">Building encrypted, stable real-time communication — handling reconnection,
+                    message sync, and media service integration in Next.js.
+                </div>
+            </div>
+    </section>
+
+    <hr class="div" />
+
     <!-- CAREER STORY -->
     <section class="sec" id="story">
-        <!-- <p class="sec-label">// 03 — career story</p> -->
         <h2>My Journey</h2>
         <p class="sec-sub">From .VN domain registration to cloud infra to multi-domain service unification — here's how
             it happened.</p>
@@ -993,7 +1041,7 @@
                 <div class="tl-dot"></div>
                 <div class="tl-date">10 Dec 2024 — Team Service, Long Van</div>
                 <div class="tl-title">🌐 Making Long Van an Official .VN Domain Provider</div>
-                <div class="tl-body">I joined Long Van as a Backend Java Engineer and was immediately placed on the
+                <div class="tl-body">I joined Long Van as a Backend Developer and was immediately placed on the
                     domain team alongside the team lead. We were both tasked with building the entire .VN domain
                     management system from scratch — covering registration, eKYC profile management, deployment,
                     renewal, and the full customer lifecycle from order to active usage. This work was instrumental in
@@ -1046,149 +1094,45 @@
 
     <hr class="div" />
 
-    <!-- ABOUT -->
-    <section class="sec" id="about">
-        <!-- <p class="sec-label">// 04 — about me</p> -->
-        <h2>About</h2>
-        <p class="sec-sub">A quick snapshot of who I am outside the code.</p>
-        <div class="about-grid">
-            <div class="about-card">
-                <h3>Info</h3>
-                <p>📍 Binh Chanh, Ho Chi Minh City</p>
-                <p>📞 <a href="tel:0394047655">0394 047 655</a></p>
-                <p>✉️ <a href="mailto:phamtandat655@gmail.com">phamtandat655@gmail.com</a></p>
-                <p>🎓 Sai Gon University · Software Engineering</p>
-                <div class="stat-row">
-                    <div class="stat">
-                        <div class="num">1+</div>
-                        <div class="lbl">Years Exp</div>
-                    </div>
-                    <div class="stat">
-                        <div class="num">3</div>
-                        <div class="lbl">Domains</div>
-                    </div>
-                    <div class="stat">
-                        <div class="num">3.1</div>
-                        <div class="lbl">GPA / 4.0</div>
-                    </div>
+    <!-- CV / RESUME -->
+    <section class="sec" id="cv">
+        <h2>My Resume</h2>
+        <p class="sec-sub">Download or preview my CV directly — always the latest version.</p>
+        <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:16px;overflow:hidden">
+            <!-- PDF Preview iframe -->
+            <div
+                style="background:var(--bg2);border-bottom:1.5px solid var(--border);padding:.85rem 1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+                <div style="display:flex;align-items:center;gap:.6rem">
+                    <span style="font-size:1.25rem">📄</span>
+                    <span
+                        style="font-size:.85rem;font-weight:600;color:var(--text2);font-family:'JetBrains Mono',monospace">PhamTanDat_CV.pdf</span>
                 </div>
+                <a href="/PhamTanDat_CV.pdf" download="PhamTanDat_CV.pdf" class="btn btn-primary"
+                    style="padding:.48rem 1.1rem;font-size:.82rem">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"
+                        viewBox="0 0 24 24">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    Download CV
+                </a>
             </div>
-            <div class="about-card">
-                <h3>English — TOEIC 755 / 990</h3>
-                <div style="margin-bottom:1rem">
-                    <div class="bar-row">
-                        <span>Reading/Listening</span>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width:77%"></div>
-                        </div>
-                        <span class="val">755/990</span>
-                    </div>
-                    <div class="bar-row">
-                        <span>Speaking</span>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width:60%"></div>
-                        </div>
-                        <span class="val">120/200</span>
-                    </div>
-                    <div class="bar-row">
-                        <span>Writing</span>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width:80%"></div>
-                        </div>
-                        <span class="val">160/200</span>
-                    </div>
-                </div>
-                <h3 style="margin-bottom:.7rem">Links</h3>
-                <p><a href="https://github.com/phamtandat655?tab=repositories" target="_blank">🐙
-                        github.com/phamtandat655</a></p>
-                <p><a href="https://www.linkedin.com/in/ph%E1%BA%A1m-t%E1%BA%A5n-%C4%91%E1%BA%A1t-49a65b278/"
-                        target="_blank">💼 LinkedIn — Phạm Tấn Đạt</a></p>
-            </div>
+            <!-- PDF embed -->
+            <iframe src="/PhamTanDat_CV.pdf" width="100%" height="620" style="display:block;border:none;background:#fff"
+                title="Pham Tan Dat — CV Preview">
+                <p style="padding:2rem;color:var(--muted);text-align:center">
+                    Your browser doesn't support PDF preview.
+                    <a href="/PhamTanDat_CV.pdf" download style="color:var(--accent)">Download the CV here</a>.
+                </p>
+            </iframe>
         </div>
-    </section>
-
-    <hr class="div" />
-
-    <!-- SUBSCRIBE -->
-    <section class="sec" id="subscribe">
-        <!-- <p class="sec-label">// 05 — stay updated</p> -->
-        <h2 style="text-align:center">Subscribe by Email</h2>
-        <p class="sec-sub" style="text-align:center">Get notified when I publish new technical write-ups, project
-            updates, or open-source work.</p>
-        <div class="subscribe-wrap">
-            <div class="subscribe-box">
-                <h3>Stay in the Loop 📬</h3>
-                <p>Drop your email and I'll reach out when there's something worth sharing — no spam, unsubscribe
-                    anytime.</p>
-                <div class="sub-form">
-                    <input class="sub-input" type="email" id="sub-email" placeholder="your@email.com" />
-                    <button class="btn btn-primary" onclick="handleSubscribe()">Subscribe</button>
-                </div>
-                <p class="sub-note">I respect your privacy. No spam, ever.</p>
-                <div id="sub-msg"></div>
-            </div>
-        </div>
-    </section>
-
-    <hr class="div" />
-
-    <!-- DOCS -->
-    <section class="sec" id="docs">
-        <!-- <p class="sec-label">// 06 — technical docs</p> -->
-        <h2>Technical Notes</h2>
-        <p class="sec-sub">Concepts, patterns, and learnings from building real production systems.</p>
-        <div class="docs-grid">
-            <div class="doc-card">
-                <div class="doc-icon">🔄</div>
-                <div class="doc-title">Service Lifecycle Design Patterns</div>
-                <div class="doc-desc">Modeling service states (pending → active → expired → cancelled) consistently
-                    across cloud, healthcare, and SPA using a unified engine.</div><span class="doc-badge">Spring Boot ·
-                    Domain Modeling</span>
-            </div>
-            <div class="doc-card">
-                <div class="doc-icon">🏗️</div>
-                <div class="doc-title">Multi-tenant Subscription Architecture</div>
-                <div class="doc-desc">Designing subscription systems handling personal, family, and enterprise tiers
-                    with benefit tracking, quota management, and sub-subscription delegation.</div><span
-                    class="doc-badge">Multi-tenant · Java</span>
-            </div>
-            <div class="doc-card">
-                <div class="doc-icon">☁️</div>
-                <div class="doc-title">VM Lifecycle &amp; DC Migration</div>
-                <div class="doc-desc">Automating VM provisioning, resource reservation, and zero-downtime data center
-                    version migrations in production cloud environments.</div><span class="doc-badge">Cloud ·
-                    Automation</span>
-            </div>
-            <div class="doc-card">
-                <div class="doc-icon">🌐</div>
-                <div class="doc-title">Domain Registration with VNNIC</div>
-                <div class="doc-desc">eKYC verification, domain registration flows, and renewal management in compliance
-                    with VNNIC registrar requirements.</div><span class="doc-badge">VNNIC · eKYC</span>
-            </div>
-            <div class="doc-card">
-                <div class="doc-icon">🔌</div>
-                <div class="doc-title">REST API for Admin Portals + Apps</div>
-                <div class="doc-desc">Building consistent REST APIs that serve both internal admin portals
-                    (JSF/PrimeFaces) and external frontend apps simultaneously.</div><span class="doc-badge">REST API ·
-                    JSF</span>
-            </div>
-            <div class="doc-card">
-                <div class="doc-icon">💬</div>
-                <div class="doc-title">Real-time Systems with WebSocket</div>
-                <div class="doc-desc">Building encrypted, stable real-time communication — handling reconnection,
-                    message sync, and media service integration in Next.js.</div><span class="doc-badge">WebSocket ·
-                    Next.js</span>
-            </div>
-        </div>
-        <p style="text-align:center;color:var(--muted);font-size:.8rem;margin-top:2rem">Full articles coming soon —
-            subscribe above to be notified 🚀</p>
     </section>
 
     <hr class="div" />
 
     <!-- CONTACT -->
     <section class="sec" id="contact">
-        <!-- <p class="sec-label">// 07 — contact me</p> -->
         <h2>Get in Touch</h2>
         <p class="sec-sub">Available for new opportunities, collaborations, or just a good tech chat.</p>
         <div class="contact-grid">
@@ -1213,16 +1157,11 @@
                 <div class="contact-lbl">LinkedIn</div>
                 <div class="contact-val">Phạm Tấn Đạt</div>
             </a>
-            <div class="contact-card">
-                <div class="contact-icon">📍</div>
-                <div class="contact-lbl">Location</div>
-                <div class="contact-val">Binh Chanh, Ho Chi Minh City, Vietnam</div>
-            </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2025 <strong>Pham Tan Dat</strong> · Backend Java Engineer ·
+        <p>© 2025 <strong>Pham Tan Dat</strong> · Backend Developer ·
             <a href="https://github.com/phamtandat655?tab=repositories" target="_blank">GitHub</a> ·
             <a href="https://www.linkedin.com/in/ph%E1%BA%A1m-t%E1%BA%A5n-%C4%91%E1%BA%A1t-49a65b278/"
                 target="_blank">LinkedIn</a> ·
@@ -1230,15 +1169,7 @@
         </p>
     </footer>
 
-    <script>
-        function handleSubscribe() {
-            const email = document.getElementById('sub-email').value.trim();
-            const msg = document.getElementById('sub-msg');
-            if (!email || !email.includes('@')) { msg.style.color = '#dc2626'; msg.textContent = 'Please enter a valid email.'; return; }
-            msg.style.color = '#059669'; msg.textContent = '✅ Thanks! You\'ll hear from me soon.';
-            document.getElementById('sub-email').value = '';
-        }
-    </script>
+    <script></script>
 </body>
 
 </html>
