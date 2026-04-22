@@ -196,7 +196,7 @@
             overflow: hidden;
             white-space: nowrap;
             border-right: 0.05em solid var(--accent);
-            animation: typing 2s steps(30, end) infinite alternate, blink-caret 0.7s step-end infinite;
+            animation: typing 1.5s steps(30, end) 1 forwards, blink-caret 0.7s step-end infinite;
             max-width: max-content;
         }
 
@@ -799,10 +799,36 @@
                 <h1>Pham Tan Dat</h1>
             </div>
             <p class="hero-role">Backend Developer · Service Lifecycle Specialist</p>
-            <p class="hero-desc">Backend Developer focused on service lifecycle systems across cloud, domain, and
-                subscription platforms.
-                Experienced in unifying multi-domain service models and building scalable backend systems with Spring
-                Boot.</p>
+            <p class="hero-desc" style="margin-bottom: 1.5rem; text-align: left;">
+                - Backend Developer focused on service lifecycle systems across cloud, domain, and subscription
+                platforms.
+                <br />
+                - Contributed to production systems including a .VN domain platform and cloud services, solving
+                real-world
+                lifecycle problems and improving system consistency.
+                <br />
+                - Worked in a no-BA environment, directly analyzing requirements and collaborating with Tech Lead on
+                solution design and implementation.
+            </p>
+            <div
+                style="text-align:left; max-width: 580px; margin: 0 auto 2.5rem; background: var(--surface); border: 1.5px solid var(--border); border-radius: 14px; padding: 1.5rem;">
+                <h3
+                    style="font-size:.95rem; color: var(--text); margin-bottom:.85rem; display:flex; align-items:center; gap:.5rem;">
+                    <span style="color:var(--accent);">🎯</span> What I Focus On
+                </h3>
+                <ul
+                    style="list-style:none; padding:0; margin:0; font-size:.86rem; color:var(--text2); display:flex; flex-direction:column; gap:.7rem;">
+                    <li style="display:flex; align-items:flex-start; gap:.5rem;"><span
+                            style="color:var(--green); font-weight:bold;">✓</span> <span>Service lifecycle design
+                            (scaling, renewal, plan changes)</span></li>
+                    <li style="display:flex; align-items:flex-start; gap:.5rem;"><span
+                            style="color:var(--green); font-weight:bold;">✓</span> <span>Multi-domain system alignment
+                            (cloud, subscription, benefit systems)</span></li>
+                    <li style="display:flex; align-items:flex-start; gap:.5rem;"><span
+                            style="color:var(--green); font-weight:bold;">✓</span> <span>Building maintainable backend
+                            services with clear and consistent resource management</span></li>
+                </ul>
+            </div>
             <div class="hero-btns">
                 <a href="#projects" class="btn btn-primary">
                     <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -865,7 +891,7 @@
                             computer
                             science fundamentals including data structures, algorithms, databases, and software
                             engineering
-                            principles.</p>
+                            principles, with a focus on backend system development.</p>
                     </div>
                 </div>
             </div>
@@ -886,18 +912,13 @@
                 <div class="skill-cat-icon">🌱</div>
                 <h3>Backend</h3>
                 <div class="tags"><span class="tag hi">Java</span><span class="tag hi">Spring Boot</span><span
-                        class="tag hi">Spring MVC</span><span class="tag">Spring</span><span class="tag">JSF /
-                        PrimeFaces</span></div>
+                        class="tag hi">Spring MVC</span><span class="tag">JSF / PrimeFaces</span></div>
             </div>
             <div class="skill-cat">
                 <div class="skill-cat-icon">⚛️</div>
                 <h3>Frontend</h3>
-                <div class="tags">
-                    <span class="tag">HTML/CSS</span>
-                    <span class="tag">Javascript</span>
-                    <span class="tag">ReactJS</span>
-                    <span class="tag">Next.js</span>
-                </div>
+                <div class="tags"><span class="tag">JavaScript</span><span class="tag">ReactJS</span><span
+                        class="tag">Next.js</span><span class="tag">HTML</span><span class="tag">CSS</span></div>
             </div>
             <div class="skill-cat">
                 <div class="skill-cat-icon">🗄️</div>
@@ -906,9 +927,9 @@
             </div>
             <div class="skill-cat">
                 <div class="skill-cat-icon">🚀</div>
-                <h3>DevOps &amp; CI/CD</h3>
-                <div class="tags"><span class="tag hi">GitLab CI/CD</span><span class="tag">Jenkins</span><span
-                        class="tag">ArgoCD</span><span class="tag">Git</span></div>
+                <h3>DevOps &amp; Tools</h3>
+                <div class="tags"><span class="tag">Git</span><span class="tag hi">GitLab CI/CD</span><span
+                        class="tag">Jenkins</span><span class="tag">ArgoCD</span></div>
             </div>
         </div>
 
@@ -952,36 +973,47 @@
             <div class="proj-card">
                 <div><span class="proj-badge badge-domain">🌐 Domain</span></div>
                 <div class="proj-title">.VN Domain Management System</div>
-                <div class="proj-desc">Full lifecycle domain system supporting VNNIC registrar operations —
-                    registration, eKYC document handling, deployment, renewal, and post-go-live stability. Helped Long
-                    Van become an official .VN provider.</div>
+                <div class="proj-desc">Contributed to a full lifecycle domain system supporting VNNIC registrar
+                    operations —
+                    registration, eKYC document handling, deployment, renewal, and post-go-live stability.<br /><span
+                        style="color:var(--accent);font-weight:600;font-size:.72rem;margin-top:.4rem;display:inline-block">→
+                        Based on real production systems</span></div>
                 <div class="proj-tags"><span class="tag hi">Spring Boot</span><span class="tag">eKYC</span><span
                         class="tag">VNNIC</span><span class="tag">MySQL</span></div>
             </div>
             <div class="proj-card">
                 <div><span class="proj-badge badge-cloud">☁️ Cloud</span></div>
                 <div class="proj-title">DataCenter Migration v1→v2</div>
-                <div class="proj-desc">Automation APIs and workflows for VM data center migration. Managed VM lifecycle:
-                    provisioning, resource reservation, password reset, automated deployment pipelines — significantly
-                    reducing manual operations and improving deployment consistency across environments.</div>
+                <div class="proj-desc">Built and optimized automation APIs and workflows for VM data center migration.
+                    Managed VM lifecycle:
+                    provisioning, resource reservation, password reset, automated deployment pipelines — reducing manual
+                    operations and improving deployment consistency across environments.<br /><span
+                        style="color:var(--accent);font-weight:600;font-size:.72rem;margin-top:.4rem;display:inline-block">→
+                        Based on real production systems</span></div>
                 <div class="proj-tags"><span class="tag hi">Spring Boot</span><span class="tag">CI/CD</span><span
                         class="tag">VM Mgmt</span><span class="tag">Automation</span></div>
             </div>
             <div class="proj-card">
                 <div><span class="proj-badge badge-cloud">⚙️ Platform</span></div>
                 <div class="proj-title">Service Lifecycle Refactoring & Unification</div>
-                <div class="proj-desc">Played a key role in refactoring and unifying service modules (scaling, plan
-                    upgrade/downgrade, renewal, resource usage) across cloud, healthcare, and SPA — eliminating domain
-                    silos into one coherent engine.</div>
+                <div class="proj-desc">Contributed to refactoring and unifying service modules (scaling, plan
+                    upgrade/downgrade, renewal, resource usage) across cloud, healthcare, and SPA — reducing
+                    fragmentation and improving consistency across modules.<br /><span
+                        style="color:var(--accent);font-weight:600;font-size:.72rem;margin-top:.4rem;display:inline-block">→
+                        Based on real production systems</span></div>
                 <div class="proj-tags"><span class="tag hi">Spring Boot</span><span class="tag">Multi-domain</span><span
                         class="tag">Refactoring</span><span class="tag">MongoDB</span></div>
             </div>
             <div class="proj-card">
                 <div><span class="proj-badge badge-health">🏥 Healthcare</span></div>
                 <div class="proj-title">TRUEDOC — Subscription Platform</div>
-                <div class="proj-desc">Multi-tenant healthcare subscription system with personal, family, and enterprise
-                    tiers. Enterprise distributes sub-subscriptions (health consulting &amp; lab testing) by phone.
-                    Includes appointment booking and specialty selection.</div>
+                <div class="proj-desc">Contributed to a multi-tenant healthcare subscription system with personal,
+                    family, and enterprise
+                    tiers, handling complex lifecycle logic and benefit distribution. Enterprise distributes
+                    sub-subscriptions (health consulting &amp; lab testing) by phone.
+                    Includes appointment booking and specialty selection.<br /><span
+                        style="color:var(--accent);font-weight:600;font-size:.72rem;margin-top:.4rem;display:inline-block">→
+                        Based on real production systems</span></div>
                 <div class="proj-tags"><span class="tag hi">Multi-tenant</span><span
                         class="tag">Subscription</span><span class="tag">Enterprise</span><span class="tag">Spring
                         Boot</span></div>
@@ -989,18 +1021,23 @@
             <div class="proj-card">
                 <div><span class="proj-badge badge-spa">💆 SPA</span></div>
                 <div class="proj-title">SPA Treatment Lifecycle System</div>
-                <div class="proj-desc">Migrated legacy treatment data and rebuilt the full lifecycle: prepaid →
+                <div class="proj-desc">Migrated legacy treatment data and contributed to rebuilding the lifecycle:
+                    prepaid →
                     activated → usage with benefit-based session tracking. Delivered both admin portal (JSF) and REST
-                    APIs for frontend integration.</div>
+                    APIs for frontend integration.<br /><span
+                        style="color:var(--accent);font-weight:600;font-size:.72rem;margin-top:.4rem;display:inline-block">→
+                        Based on real production systems</span></div>
                 <div class="proj-tags"><span class="tag hi">Spring Boot</span><span class="tag">Data
                         Migration</span><span class="tag">Treatment Mgmt</span><span class="tag">JSF</span></div>
             </div>
             <div class="proj-card">
                 <div><span class="proj-badge badge-rt">💬 Real-time</span></div>
                 <div class="proj-title">Real-time Communication Platform</div>
-                <div class="proj-desc">Chat, group messaging, and voice/video platform built with Next.js. Integrated
+                <div class="proj-desc">Built a chat, group messaging, and voice/video platform using Next.js. Integrated
                     WebSocket with encryption and resolved cross-service real-time sync issues during internship at
-                    Stech VN.</div>
+                    Stech VN.<br /><span
+                        style="color:var(--accent);font-weight:600;font-size:.72rem;margin-top:.4rem;display:inline-block">→
+                        Based on real production systems</span></div>
                 <div class="proj-tags"><span class="tag">Next.js</span><span class="tag">WebSocket</span><span
                         class="tag">React</span><span class="tag">Encryption</span></div>
             </div>
@@ -1012,44 +1049,56 @@
     <!-- DOCS -->
     <section class="sec" id="docs">
         <h2>Technical Notes</h2>
-        <p class="sec-sub">Concepts, patterns, and learnings from building real production systems.</p>
+        <p class="sec-sub">Key patterns and design approaches derived from real production systems.</p>
         <div class="docs-grid">
             <div class="doc-card">
                 <div class="doc-icon">🔄</div>
                 <div class="doc-title">Service Lifecycle Design Patterns</div>
                 <div class="doc-desc">Modeling service states (pending → active → expired → cancelled) consistently
-                    across cloud, healthcare, and SPA using a unified engine.</div>
+                    across cloud, healthcare, and SPA.<br /><span
+                        style="color:var(--accent);font-weight:600;font-size:.72rem;margin-top:.5rem;display:inline-block">→
+                        Based on real production scenarios</span></div>
             </div>
             <div class="doc-card">
                 <div class="doc-icon">🏗️</div>
                 <div class="doc-title">Multi-tenant Subscription Architecture</div>
                 <div class="doc-desc">Designing subscription systems handling personal, family, and enterprise tiers
-                    with benefit tracking, quota management, and sub-subscription delegation.</div>
+                    with benefit tracking.<br /><span
+                        style="color:var(--accent);font-weight:600;font-size:.72rem;margin-top:.5rem;display:inline-block">→
+                        Includes real implementation cases</span></div>
             </div>
             <div class="doc-card">
                 <div class="doc-icon">☁️</div>
                 <div class="doc-title">VM Lifecycle &amp; DC Migration</div>
                 <div class="doc-desc">Automating VM provisioning, resource reservation, and zero-downtime data center
-                    version migrations in production cloud environments.</div>
+                    version migrations.<br /><span
+                        style="color:var(--accent);font-weight:600;font-size:.72rem;margin-top:.5rem;display:inline-block">→
+                        Based on real production scenarios</span></div>
             </div>
             <div class="doc-card">
                 <div class="doc-icon">🌐</div>
                 <div class="doc-title">Domain Registration with VNNIC</div>
                 <div class="doc-desc">eKYC verification, domain registration flows, and renewal management in compliance
-                    with VNNIC registrar requirements.</div>
+                    with VNNIC requirements.<br /><span
+                        style="color:var(--accent);font-weight:600;font-size:.72rem;margin-top:.5rem;display:inline-block">→
+                        Includes real implementation cases</span></div>
             </div>
             <div class="doc-card">
                 <div class="doc-icon">🔌</div>
                 <div class="doc-title">REST API for Admin Portals + Apps</div>
-                <div class="doc-desc">Building consistent REST APIs that serve both internal admin portals
-                    (JSF/PrimeFaces) and external frontend apps simultaneously.</div>
+                <div class="doc-desc">Building consistent REST APIs that serve both internal admin portals (JSF) and
+                    external frontend apps.<br /><span
+                        style="color:var(--accent);font-weight:600;font-size:.72rem;margin-top:.5rem;display:inline-block">→
+                        Based on real production scenarios</span></div>
             </div>
             <div class="doc-card">
                 <div class="doc-icon">💬</div>
                 <div class="doc-title">Real-time Systems with WebSocket</div>
-                <div class="doc-desc">Building encrypted, stable real-time communication — handling reconnection,
-                    message sync, and media service integration in Next.js.
-                </div>
+                <div class="doc-desc">Building encrypted real-time communication — handling reconnection and message
+                    synchronization
+                    in Next.js.<br /><span
+                        style="color:var(--accent);font-weight:600;font-size:.72rem;margin-top:.5rem;display:inline-block">→
+                        Includes real implementation cases</span></div>
             </div>
     </section>
 
@@ -1064,10 +1113,10 @@
                 <div class="tl-dot"></div>
                 <div class="tl-date">10 Dec 2024 — Team Service, Long Van</div>
                 <div class="tl-title">🌐 Launching .VN Domain Management System</div>
-                <div class="tl-body">Started as a Backend Java Developer, working closely with the Tech Lead to build
-                    Long Van's domain management system from scratch. We delivered the complete lifecycle—registration,
-                    eKYC integration, provisioning, and renewals—successfully helping Long Van become an official .VN
-                    domain provider with VNNIC.</div>
+                <div class="tl-body">Started as a Backend Java Developer, a backend contributor working closely with the
+                    Tech Lead to build Long Van's domain management system. We delivered the complete
+                    lifecycle—registration, eKYC integration, provisioning, and renewals—supporting the company's
+                    operation as an official .VN domain provider with VNNIC.</div>
                 <div class="tl-tags"><span class="tag hi">Domain Lifecycle</span><span class="tag">eKYC</span><span
                         class="tag">VNNIC</span><span class="tag">Spring Boot</span></div>
             </div>
@@ -1076,7 +1125,7 @@
                 <div class="tl-date">Early 2025 — Team Cloud</div>
                 <div class="tl-title">☁️ Datacenter Sync &amp; VM Lifecycle Automation</div>
                 <div class="tl-body">Transitioned to the Cloud team to handle Datacenter synchronization from v1 to v2,
-                    preparing it for official customer rollout. Managed the full Virtual Machine (VM) lifecycle
+                    preparing it for official customer rollout. Contributed to the full Virtual Machine (VM) lifecycle
                     including deployment flows, resource reservation tuning, auto-provisioning pipelines, and secure
                     password management.</div>
                 <div class="tl-tags"><span class="tag hi">Cloud Infra</span><span class="tag">VM Mgmt</span><span
@@ -1085,11 +1134,11 @@
             <div class="tl-item">
                 <div class="tl-dot"></div>
                 <div class="tl-date">Mid 2025 — Team Service</div>
-                <div class="tl-title">⚙️ Primary Developer — Service Platform Overhaul</div>
-                <div class="tl-body">Returned to Team Service as the primary backend developer. I took responsibility
-                    for upgrading Long Van's core service management engine. This involved overhauling how resource
-                    allocation, plan upgrades/downgrades, and renewals were handled. I also built the internal admin
-                    PORTAL UI (JSF/PrimeFaces) and provided robust REST APIs for Frontend Web/App integration.</div>
+                <div class="tl-title">⚙️ Key Contributor — Service Platform Overhaul</div>
+                <div class="tl-body">Returned to Team Service as a backend contributor. I contributed to improving Long
+                    Van's core service management engine, improving consistency in how resource allocation, plan
+                    upgrades/downgrades, and renewals were handled. I also worked on the internal admin portal UI
+                    (JSF/PrimeFaces) and provided robust REST APIs for Frontend Web/App integration.</div>
                 <div class="tl-tags"><span class="tag hi">Service Lifecycle</span><span class="tag">REST API</span><span
                         class="tag">JSF/PrimeFaces</span><span class="tag">Refactoring</span></div>
             </div>
@@ -1097,17 +1146,15 @@
                 <div class="tl-dot"></div>
                 <div class="tl-date">2025 — Outsource Projects</div>
                 <div class="tl-title">🏥 Multi-domain Expansion: Healthcare (TRUEDOC) &amp; SPA</div>
-                <div class="tl-body">Developed backend solutions for two major outsource projects, managing highly
-                    specialized service lifecycles:<br /><br /><b>TRUEDOC (Healthcare):</b> Developed a multi-tier
-                    subscription engine (Personal, Family, Enterprise). Tackled complex Enterprise allocation where
-                    organizations distribute sub-subscriptions (health consulting &amp; lab testing) via phone numbers.
-                    Handled the full flow from inactive state to benefit usage (booking appointments, choosing
-                    specialties/doctors).<br /><br /><b>SPA Management:</b> Migrated legacy treatment data and built a
-                    new lifecycle system for SPA packages, ensuring correct usage tracking based on plan
-                    benefits.<br /><br /><b>Unified Architecture:</b> Because Long Van's cloud resource management
-                    differs from Healthcare/SPA benefit tracking, I successfully abstracted and unified the core
-                    lifecycle logic. This allowed explicitly managing states across all 3 domains without duplicating
-                    the underlying engine.</div>
+                <div class="tl-body">Contributed to backend development for two major outsource projects, working on
+                    specialized service lifecycles:<br /><br /><b>TRUEDOC (Healthcare):</b> Contributed to a multi-tier
+                    subscription engine (Personal, Family, Enterprise). Handled Enterprise allocation where
+                    organizations distribute sub-subscriptions (health consulting &amp; lab testing) via phone numbers,
+                    managing the flow from inactive state to benefit usage.<br /><br /><b>SPA Management:</b> Migrated
+                    legacy treatment data and contributed to a new lifecycle system for SPA packages, ensuring correct
+                    usage tracking based on plan benefits.<br /><br /><b>Unified Architecture:</b> Because Long Van's
+                    cloud resource management differs from Healthcare/SPA benefit tracking, I improved consistency
+                    by aligning core lifecycle logic across systems, reducing fragmentation across all 3 domains.</div>
                 <div class="tl-tags"><span class="tag hi">TRUEDOC</span><span class="tag">Multi-tenant</span><span
                         class="tag">SPA Treatment</span><span class="tag">Unified Model</span><span class="tag">Data
                         Migration</span></div>
@@ -1157,7 +1204,8 @@
     <!-- CONTACT -->
     <section class="sec" id="contact">
         <h2>Get in Touch</h2>
-        <p class="sec-sub">Available for new opportunities, collaborations, or just a good tech chat.</p>
+        <p class="sec-sub">Currently looking for Backend Java opportunities where I can work on scalable systems and
+            service-oriented architectures.</p>
         <div class="contact-grid">
             <a href="mailto:phamtandat655@gmail.com" class="contact-card">
                 <div class="contact-icon">✉️</div>
@@ -1184,7 +1232,7 @@
     </section>
 
     <footer>
-        <p>© 2025 <strong>Pham Tan Dat</strong> · Backend Developer ·
+        <p>© 2026 <strong>Pham Tan Dat</strong> · Backend Developer ·
             <a href="https://github.com/phamtandat655?tab=repositories" target="_blank">GitHub</a> ·
             <a href="https://www.linkedin.com/in/ph%E1%BA%A1m-t%E1%BA%A5n-%C4%91%E1%BA%A1t-49a65b278/"
                 target="_blank">LinkedIn</a> ·
