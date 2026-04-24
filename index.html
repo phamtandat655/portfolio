@@ -1019,17 +1019,17 @@
                     <div>
                         <div class="bar-row"><span>Reading / Listening</span>
                             <div class="bar-track">
-                                <div class="bar-fill" style="width:57%"></div>
+                                <div class="bar-fill" style="width:76%"></div>
                             </div><span class="val">755/990</span>
                         </div>
                         <div class="bar-row"><span>Speaking</span>
                             <div class="bar-track">
-                                <div class="bar-fill" style="width:40%"></div>
+                                <div class="bar-fill" style="width:60%"></div>
                             </div><span class="val">120/200</span>
                         </div>
                         <div class="bar-row"><span>Writing</span>
                             <div class="bar-track">
-                                <div class="bar-fill" style="width:60%"></div>
+                                <div class="bar-fill" style="width:80%"></div>
                             </div><span class="val">160/200</span>
                         </div>
                     </div>
@@ -1089,8 +1089,9 @@
                 <div class="proj-key">
                     <b>Key Contributions:</b>
                     <ul>
-                        <li>Implemented registration, eKYC document handling, deployment, and renewal flows</li>
-                        <li>Handled post-go-live stability and resolved production issues</li>
+                        <li>Collaborated with Tech Lead to build the full domain lifecycle: registration, eKYC,
+                            provisioning, and renewals</li>
+                        <li>Ensured end-to-end domain management from customer order to active usage</li>
                         <li>Supported real production operations in compliance with VNNIC</li>
                     </ul>
                 </div>
@@ -1149,21 +1150,24 @@
             <div class="proj-card featured">
                 <div><span class="proj-badge badge-cloud">⚙️ Platform</span> <span class="proj-badge"
                         style="background:var(--accent);color:#fff">⭐ Featured</span></div>
-                <div class="proj-title">Service Lifecycle Refactoring</div>
-                <div class="proj-desc">Refactoring service modules across cloud, healthcare, and SPA domains.</div>
+                <div class="proj-title">Service Platform Overhaul</div>
+                <div class="proj-desc">Improved Long Van's core service management engine as the sole backend developer.
+                </div>
                 <div class="proj-key">
                     <b>Key Contributions:</b>
                     <ul>
-                        <li>Refactored service lifecycle flows (scaling, plan changes, renewal)</li>
-                        <li>Standardized state transitions across multiple systems</li>
-                        <li>Reduced duplicated logic and handled cross-domain dependencies</li>
+                        <li>Acted as the primary backend developer for the service team</li>
+                        <li>Improved core service management: resource allocation, resource changes, plan upgrades,
+                            renewals, and usage tracking</li>
+                        <li>Built internal admin portals (PrimeFaces) and provided REST APIs for Web/App integration
+                        </li>
                     </ul>
                 </div>
                 <div class="proj-key">
                     <b>Engineering Highlights:</b>
                     <ul>
-                        <li>Modeled service states (pending → active → expired → cancelled) consistently across cloud,
-                            healthcare, and SPA</li>
+                        <li>Standardized core lifecycle logic to be extensible for diverse domains like Healthcare and
+                            SPA</li>
                     </ul>
                 </div>
                 <div class="proj-tags"><span class="tag hi">Spring Boot</span><span class="tag">Multi-domain</span><span
@@ -1173,22 +1177,25 @@
             <div class="proj-card featured">
                 <div><span class="proj-badge badge-health">🏥 Healthcare</span> <span class="proj-badge"
                         style="background:var(--accent);color:#fff">⭐ Featured</span></div>
-                <div class="proj-title">TRUEDOC — Subscription Platform</div>
-                <div class="proj-desc">A multi-tenant healthcare subscription system with personal, family, and
-                    enterprise tiers.</div>
+                <div class="proj-title">TRUEDOC — Healthcare Subscription System</div>
+                <div class="proj-desc">A multi-tenant healthcare system managing subscriptions as medical services.
+                </div>
                 <div class="proj-key">
                     <b>Key Contributions:</b>
                     <ul>
-                        <li>Implemented complex lifecycle logic and benefit distribution</li>
-                        <li>Built Enterprise tier sub-subscription distribution via phone</li>
-                        <li>Supported appointment booking and specialty selection flows</li>
+                        <li>Managed the full subscription lifecycle: unpaid, purchased, and unactivated states</li>
+                        <li>Developed specific tier logic for Personal, Family, and Enterprise subscriptions</li>
+                        <li>Handled complex Enterprise allocations (distributing health consulting and lab testing
+                            sub-subscriptions via phone numbers)</li>
+                        <li>Built usage flows: viewing benefits (service resources), booking appointments, and selecting
+                            doctors</li>
                     </ul>
                 </div>
                 <div class="proj-key">
                     <b>Engineering Highlights:</b>
                     <ul>
-                        <li>Designed multi-tenant subscription systems handling personal, family, and enterprise tiers
-                            with benefit tracking</li>
+                        <li>Mapped standard cloud resource models into healthcare benefit logic (subscriptions and
+                            usages)</li>
                     </ul>
                 </div>
                 <div class="proj-links">
@@ -1208,20 +1215,23 @@
                 <div><span class="proj-badge badge-spa">💆 SPA</span> <span class="proj-badge"
                         style="background:var(--accent);color:#fff">⭐ Featured</span></div>
                 <div class="proj-title">SPA Treatment Lifecycle System</div>
-                <div class="proj-desc">System rebuilding the lifecycle: prepaid → activated → usage.</div>
+                <div class="proj-desc">A service system adapting core lifecycle logic for SPA treatment management.
+                </div>
                 <div class="proj-key">
                     <b>Key Contributions:</b>
                     <ul>
-                        <li>Migrated legacy treatment data to the new system</li>
-                        <li>Implemented benefit-based session tracking</li>
-                        <li>Delivered both admin portal (JSF) and REST APIs for frontend</li>
+                        <li>Managed the full treatment lifecycle in the SPA context (from unpaid items to activated
+                            treatments)</li>
+                        <li>Executed data migration to import existing treatments from the legacy SPA system</li>
+                        <li>Built treatment usage logic: activation and session tracking based on plan benefits</li>
+                        <li>Delivered both admin portal (PrimeFaces) and REST APIs for frontend integration</li>
                     </ul>
                 </div>
                 <div class="proj-key">
                     <b>Engineering Highlights:</b>
                     <ul>
-                        <li>Built consistent REST APIs that serve both internal admin portals (JSF) and external
-                            frontend apps</li>
+                        <li>Mapped standard cloud resource models into SPA treatment logic without fragmenting the core
+                            codebase</li>
                     </ul>
                 </div>
                 <div class="proj-links">
@@ -1279,8 +1289,8 @@
                 <div class="tl-body">
                     Worked as a Backend Developer to build Long Van's domain management system:<br>
                     - Delivered complete lifecycle: <b>registration, eKYC, provisioning, and renewals</b>.<br>
-                    - Supported company's operation as an official <b>.VN domain provider</b>.<br>
-                    - Collaborated directly with Tech Lead on production readiness.
+                    - Ensured end-to-end domain management from customer order to active usage.<br>
+                    - Collaborated directly with Tech Lead on production readiness for VNNIC compliance.
                 </div>
                 <div class="tl-tags"><span class="tag hi">Domain Lifecycle</span><span class="tag">eKYC</span><span
                         class="tag">VNNIC</span><span class="tag">Spring Boot</span></div>
@@ -1291,9 +1301,9 @@
                 <div class="tl-title">☁️ Datacenter Sync &amp; VM Lifecycle Automation</div>
                 <div class="tl-body">
                     Transitioned to handle <b>Datacenter synchronization (v1 to v2)</b> for customer rollout:<br>
-                    - Automated full <b>VM lifecycle workflows</b>.<br>
-                    - Handled auto-provisioning pipelines and <b>secure password management</b>.<br>
-                    - Tuned resource reservations for stability.
+                    - Automated full <b>VM lifecycle workflows</b> (deployment, ensuring resource parameters,
+                    reservation).<br>
+                    - Handled auto-provisioning pipelines and <b>secure password management</b>.
                 </div>
                 <div class="tl-tags"><span class="tag hi">Cloud Infra</span><span class="tag">VM Mgmt</span><span
                         class="tag">Automation</span><span class="tag">Datacenter Sync</span></div>
@@ -1301,12 +1311,12 @@
             <div class="tl-item">
                 <div class="tl-dot"></div>
                 <div class="tl-date">Mid 2025 — Team Service</div>
-                <div class="tl-title">⚙️ Key Contributor — Service Platform Overhaul</div>
+                <div class="tl-title">⚙️ Sole Backend Contributor — Service Platform Overhaul</div>
                 <div class="tl-body">
-                    Returned to Team Service to standardize the core service engine:<br>
-                    - Standardized <b>resource allocation, plan upgrades, and renewals</b>.<br>
+                    Returned to Team Service as the sole backend developer to improve the core service engine:<br>
+                    - Improved <b>resource management, resource changes, plan changes, renewals, and usage</b>.<br>
                     - Built internal admin portal UI using <b>JSF/PrimeFaces</b>.<br>
-                    - Provided robust <b>REST APIs</b> for frontend integration.
+                    - Provided robust <b>REST APIs</b> for frontend Web/App integration.
                 </div>
                 <div class="tl-tags"><span class="tag hi">Service Lifecycle</span><span class="tag">REST API</span><span
                         class="tag">JSF/PrimeFaces</span><span class="tag">Refactoring</span></div>
@@ -1316,12 +1326,14 @@
                 <div class="tl-date">2025 — Outsource Projects</div>
                 <div class="tl-title">🏥 Multi-domain Expansion: Healthcare &amp; SPA</div>
                 <div class="tl-body">
-                    Developed backend systems for specialized service lifecycles:<br>
-                    - <b>TRUEDOC:</b> Implemented a multi-tier subscription engine handling complex <b>benefit
-                        distribution</b>.<br>
-                    - <b>SPA Management:</b> Migrated legacy data and built a lifecycle system for <b>session
-                        tracking</b>.<br>
-                    - <b>Unified Model:</b> Standardized core lifecycle logic across cloud, health, and SPA domains.
+                    Developed backend systems mapping cloud concepts to specialized service lifecycles:<br>
+                    - <b>TRUEDOC:</b> Built subscriptions lifecycle handling <b>Enterprise sub-subscription distribution
+                        via phone numbers</b> (consulting &amp; lab testing) and appointment booking.<br>
+                    - <b>SPA Management:</b> Handled legacy data migration and built treatment lifecycle tracking based
+                    on <b>plan benefits</b>.<br>
+                    - <b>Unified Architecture:</b> Improved core systems to cleanly support Cloud resources, Healthcare
+                    benefits, and SPA treatments under <b>one unified logic</b> without creating separate management
+                    models for each.
                 </div>
                 <div class="tl-tags"><span class="tag hi">TRUEDOC</span><span class="tag">Multi-tenant</span><span
                         class="tag">SPA Treatment</span><span class="tag">Unified Model</span><span class="tag">Data
