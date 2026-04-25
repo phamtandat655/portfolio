@@ -91,6 +91,15 @@
             align-items: center
         }
 
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text);
+            cursor: pointer;
+        }
+
         .nav-links a {
             color: var(--muted);
             text-decoration: none;
@@ -193,33 +202,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 0.05em solid var(--accent);
-            animation: typing 1.5s steps(30, end) 1 forwards, blink-caret 0.7s step-end infinite;
-            max-width: max-content;
-        }
-
-        @keyframes typing {
-            from {
-                width: 0
-            }
-
-            to {
-                width: 100%
-            }
-        }
-
-        @keyframes blink-caret {
-
-            from,
-            to {
-                border-color: transparent
-            }
-
-            50% {
-                border-color: var(--accent);
-            }
         }
 
         .hero-role {
@@ -320,7 +302,7 @@
         /* SECTION */
         .sec {
             padding: 5.5rem 2rem;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto
         }
 
@@ -817,8 +799,27 @@
         }
 
         @media(max-width:640px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
             .nav-links {
-                display: none
+                position: absolute;
+                top: 62px;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, .95);
+                backdrop-filter: blur(14px);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1.2rem;
+                border-bottom: 1px solid var(--border);
+                box-shadow: var(--shadow);
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
             }
 
             .about-grid {
@@ -846,6 +847,8 @@
 
     <nav>
         <div class="nav-logo">tandat.dev</div>
+        <button class="mobile-menu-btn"
+            onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -866,16 +869,11 @@
                 <h1>Pham Tan Dat</h1>
             </div>
             <p class="hero-role">Backend Developer</p>
-            <p class="hero-desc" style="margin-bottom: 1.5rem; text-align: left;">
-                - Backend Developer focused on service lifecycle systems across cloud, domain, and subscription
+            <p class="hero-desc" style="margin-bottom: 1.5rem; text-align: center;">
+                Backend Developer with 1+ year experience building production systems in domain, cloud, and healthcare
                 platforms.
-                <br />
-                - Supported production systems including a .VN domain platform and cloud services, solving
-                real-world
-                lifecycle problems and standardizing system states.
-                <br />
-                - Worked in a no-BA environment, directly analyzing requirements and collaborating with Tech Lead on
-                solution design and implementation.
+                Focused on designing service lifecycles, ensuring state consistency, and preventing billing/resource
+                issues in large-scale systems.
             </p>
             <div
                 style="text-align:left; max-width: 580px; margin: 0 auto 2.5rem; background: var(--surface); border: 1.5px solid var(--border); border-radius: 14px; padding: 1.5rem;">
@@ -886,14 +884,14 @@
                 <ul
                     style="list-style:none; padding:0; margin:0; font-size:.86rem; color:var(--text2); display:flex; flex-direction:column; gap:.7rem;">
                     <li style="display:flex; align-items:flex-start; gap:.5rem;"><span
-                            style="color:var(--green); font-weight:bold;">✓</span> <span>Service lifecycle design
-                            (scaling, renewal, plan changes)</span></li>
+                            style="color:var(--green); font-weight:bold;">✓</span> <span>Designing explicit state
+                            machines for complex service lifecycles</span></li>
                     <li style="display:flex; align-items:flex-start; gap:.5rem;"><span
-                            style="color:var(--green); font-weight:bold;">✓</span> <span>Multi-domain system alignment
-                            (cloud, subscription, benefit systems)</span></li>
+                            style="color:var(--green); font-weight:bold;">✓</span> <span>Aligning inconsistent states
+                            across independent domains (cloud, subscription, healthcare)</span></li>
                     <li style="display:flex; align-items:flex-start; gap:.5rem;"><span
-                            style="color:var(--green); font-weight:bold;">✓</span> <span>Building maintainable backend
-                            services with clear and consistent resource management</span></li>
+                            style="color:var(--green); font-weight:bold;">✓</span> <span>Preventing billing & resource
+                            drift via centralized validation</span></li>
                 </ul>
             </div>
             <div class="hero-btns">
@@ -1044,31 +1042,24 @@
     <section class="sec" id="highlights">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
             <div>
-                <h2 style="font-size: 1.5rem;">What I Actually Did</h2>
+                <h2 style="font-size: 1.5rem;">Engineering Mindset</h2>
                 <ul
                     style="padding-left: 1.2rem; color: var(--muted); font-size: 0.88rem; line-height: 1.8; margin-top: 1rem;">
-                    <li>Designed REST APIs using Spring Boot</li>
-                    <li>Implemented business logic for service lifecycle</li>
-                    <li>Debugged production issues (logs, DB, APIs)</li>
-                    <li>Worked directly with Tech Lead to clarify requirements</li>
+                    <li>Design explicit state transitions to prevent inconsistent service states</li>
+                    <li>Analyze full service lifecycle before implementing features</li>
+                    <li>Keep logic consistent across domains (cloud, subscription, healthcare)</li>
+                    <li>Prefer centralized validation to reduce duplication and bugs</li>
                 </ul>
             </div>
             <div>
-                <h2 style="font-size: 1.5rem;">How I Think</h2>
+                <h2 style="font-size: 1.5rem;">Lessons & Decisions</h2>
                 <ul
                     style="padding-left: 1.2rem; color: var(--muted); font-size: 0.88rem; line-height: 1.8; margin-top: 1rem;">
-                    <li>Define lifecycle states before coding</li>
-                    <li>Prefer explicit state transitions</li>
-                    <li>Keep business logic consistent across services</li>
-                </ul>
-            </div>
-            <div>
-                <h2 style="font-size: 1.5rem;">Problems I've Solved</h2>
-                <ul
-                    style="padding-left: 1.2rem; color: var(--muted); font-size: 0.88rem; line-height: 1.8; margin-top: 1rem;">
-                    <li>Inconsistent service states across modules</li>
-                    <li>Resource allocation vs subscription mismatch</li>
-                    <li>Real-time sync issues between services</li>
+                    <li style="margin-bottom: 0.5rem"><b>Mistake:</b> Misunderstood lifecycle states early on, leading
+                        to inconsistent data handling.<br /><b>Fix:</b> Redesigned lifecycle with explicit state mapping
+                        before implementation.<br /><b>Result:</b> Improved consistency and reduced edge-case bugs.</li>
+                    <li><b>Decision:</b> Proposed a small refactor to centralize validation logic, reducing duplicated
+                        code across three modules.</li>
                 </ul>
             </div>
         </div>
@@ -1078,7 +1069,7 @@
 
     <!-- PROJECTS & ENGINEERING APPROACH -->
     <section class="sec" id="projects">
-        <h2>Projects & Engineering Approach</h2>
+        <h2>Selected Projects (Production Systems)</h2>
         <p class="sec-sub">Key systems across domain, cloud, healthcare, and SPA domains — all with API + admin portal
             delivery.</p>
         <div class="projects-grid">
@@ -1089,17 +1080,22 @@
                 <div class="proj-key">
                     <b>Key Contributions:</b>
                     <ul>
-                        <li>Collaborated with Tech Lead to build the full domain lifecycle: registration, eKYC,
-                            provisioning, and renewals</li>
-                        <li>Ensured end-to-end domain management from customer order to active usage</li>
-                        <li>Supported real production operations in compliance with VNNIC</li>
+                        <li>Implemented full domain lifecycle (registration, eKYC, renewals)</li>
+                        <li>Automated backend state transitions, processing daily domain operations</li>
+                        <li>Maintained VNNIC-compliant production system for live customer usage</li>
                     </ul>
                 </div>
                 <div class="proj-key">
-                    <b>Engineering Highlights:</b>
+                    <b>Impact:</b>
                     <ul>
-                        <li>Modeled eKYC verification, domain registration flows, and renewal management in compliance
-                            with VNNIC requirements</li>
+                        <li>Supported Long Van's official operation as a .VN domain provider</li>
+                    </ul>
+                </div>
+                <div class="proj-key">
+                    <b>Tech Highlights:</b>
+                    <ul>
+                        <li>Designed explicit state machine for complex domain lifecycles</li>
+                        <li>Optimized REST APIs for reliable integration</li>
                     </ul>
                 </div>
                 <div class="proj-links">
@@ -1117,22 +1113,26 @@
             <div class="proj-card">
                 <div><span class="proj-badge badge-cloud">☁️ Cloud</span></div>
                 <div class="proj-title">Datacenter Sync & VM Lifecycle Management</div>
-                <div class="proj-desc">Managed Datacenter v1 to v2 synchronization and complete Virtual Machine
-                    lifecycle automation.</div>
+                <div class="proj-desc">Contributed to Datacenter v1 to v2 synchronization and VM operations automation.
+                </div>
                 <div class="proj-key">
                     <b>Key Contributions:</b>
                     <ul>
-                        <li>Handled Datacenter synchronization from v1 to v2 for official customer rollout</li>
-                        <li>Managed full VM lifecycle: deployment, ensuring resource parameters, and reservation
-                            tracking</li>
-                        <li>Implemented secure reset/change password flows and automated deployment pipelines</li>
+                        <li>Built synchronization APIs for Datacenter v1 to v2 rollout</li>
+                        <li>Refactored VM deployment and resource tracking logic for accuracy</li>
+                        <li>Automated deployment pipelines, cutting manual provisioning steps by ~40%</li>
                     </ul>
                 </div>
                 <div class="proj-key">
-                    <b>Engineering Highlights:</b>
+                    <b>Impact:</b>
                     <ul>
-                        <li>Automated complex VM provisioning flows and resource reservation logic</li>
-                        <li>Built reliable APIs for seamless data center version synchronization</li>
+                        <li>Ensured zero-downtime data center synchronization for production VMs</li>
+                    </ul>
+                </div>
+                <div class="proj-key">
+                    <b>Tech Highlights:</b>
+                    <ul>
+                        <li>Handled concurrent state updates and cross-version data sync</li>
                     </ul>
                 </div>
                 <div class="proj-links">
@@ -1151,23 +1151,28 @@
                 <div><span class="proj-badge badge-cloud">⚙️ Platform</span> <span class="proj-badge"
                         style="background:var(--accent);color:#fff">⭐ Featured</span></div>
                 <div class="proj-title">Service Platform Overhaul</div>
-                <div class="proj-desc">Improved Long Van's core service management engine as the sole backend developer.
+                <div class="proj-desc">Main backend contributor in the service team for improving Long Van's core
+                    service management.
                 </div>
                 <div class="proj-key">
                     <b>Key Contributions:</b>
                     <ul>
-                        <li>Acted as the primary backend developer for the service team</li>
-                        <li>Improved core service management: resource allocation, resource changes, plan upgrades,
-                            renewals, and usage tracking</li>
-                        <li>Built internal admin portals (PrimeFaces) and provided REST APIs for Web/App integration
-                        </li>
+                        <li>Standardized core service engine as main backend contributor in small team</li>
+                        <li>Redesigned resource allocation logic, handling thousands of active subscriptions</li>
+                        <li>Delivered REST APIs and JSF admin portals for cross-platform integration</li>
                     </ul>
                 </div>
                 <div class="proj-key">
-                    <b>Engineering Highlights:</b>
+                    <b>Impact:</b>
                     <ul>
-                        <li>Standardized core lifecycle logic to be extensible for diverse domains like Healthcare and
-                            SPA</li>
+                        <li>Resolved cross-domain lifecycle inconsistencies, significantly reducing duplicated code</li>
+                    </ul>
+                </div>
+                <div class="proj-key">
+                    <b>Tech Highlights:</b>
+                    <ul>
+                        <li>Centralized validation logic to prevent billing and resource drift</li>
+                        <li>Optimized DB queries for tracking thousands of dynamic resources</li>
                     </ul>
                 </div>
                 <div class="proj-tags"><span class="tag hi">Spring Boot</span><span class="tag">Multi-domain</span><span
@@ -1183,19 +1188,21 @@
                 <div class="proj-key">
                     <b>Key Contributions:</b>
                     <ul>
-                        <li>Managed the full subscription lifecycle: unpaid, purchased, and unactivated states</li>
-                        <li>Developed specific tier logic for Personal, Family, and Enterprise subscriptions</li>
-                        <li>Handled complex Enterprise allocations (distributing health consulting and lab testing
-                            sub-subscriptions via phone numbers)</li>
-                        <li>Built usage flows: viewing benefits (service resources), booking appointments, and selecting
-                            doctors</li>
+                        <li>Implemented logic for unpaid, purchased, and unactivated subscription states</li>
+                        <li>Designed multi-tier logic (Personal, Family, Enterprise) for thousands of users</li>
+                        <li>Engineered Enterprise sub-subscription distribution via phone numbers</li>
                     </ul>
                 </div>
                 <div class="proj-key">
-                    <b>Engineering Highlights:</b>
+                    <b>Impact:</b>
                     <ul>
-                        <li>Mapped standard cloud resource models into healthcare benefit logic (subscriptions and
-                            usages)</li>
+                        <li>Adapted standard cloud models into healthcare logic for complex enterprise distribution</li>
+                    </ul>
+                </div>
+                <div class="proj-key">
+                    <b>Tech Highlights:</b>
+                    <ul>
+                        <li>Modeled complex tenant hierarchies and hierarchical resource quotas</li>
                     </ul>
                 </div>
                 <div class="proj-links">
@@ -1220,18 +1227,21 @@
                 <div class="proj-key">
                     <b>Key Contributions:</b>
                     <ul>
-                        <li>Managed the full treatment lifecycle in the SPA context (from unpaid items to activated
-                            treatments)</li>
-                        <li>Executed data migration to import existing treatments from the legacy SPA system</li>
-                        <li>Built treatment usage logic: activation and session tracking based on plan benefits</li>
-                        <li>Delivered both admin portal (PrimeFaces) and REST APIs for frontend integration</li>
+                        <li>Developed SPA treatment lifecycle flows from unpaid to activated sessions</li>
+                        <li>Executed secure data migration scripts for legacy SPA system data</li>
+                        <li>Implemented session tracking based on plan benefits to prevent over-usage</li>
                     </ul>
                 </div>
                 <div class="proj-key">
-                    <b>Engineering Highlights:</b>
+                    <b>Impact:</b>
                     <ul>
-                        <li>Mapped standard cloud resource models into SPA treatment logic without fragmenting the core
-                            codebase</li>
+                        <li>Unified SPA logic with the core platform, delivering robust APIs for frontend</li>
+                    </ul>
+                </div>
+                <div class="proj-key">
+                    <b>Tech Highlights:</b>
+                    <ul>
+                        <li>Handled complex schema migration safely without downtime</li>
                     </ul>
                 </div>
                 <div class="proj-links">
@@ -1311,9 +1321,9 @@
             <div class="tl-item">
                 <div class="tl-dot"></div>
                 <div class="tl-date">Mid 2025 — Team Service</div>
-                <div class="tl-title">⚙️ Sole Backend Contributor — Service Platform Overhaul</div>
+                <div class="tl-title">⚙️ Main Backend Contributor — Service Platform Overhaul</div>
                 <div class="tl-body">
-                    Returned to Team Service as the sole backend developer to improve the core service engine:<br>
+                    Returned to Team Service as the main backend contributor to improve the core service engine:<br>
                     - Improved <b>resource management, resource changes, plan changes, renewals, and usage</b>.<br>
                     - Built internal admin portal UI using <b>JSF/PrimeFaces</b>.<br>
                     - Provided robust <b>REST APIs</b> for frontend Web/App integration.
@@ -1331,9 +1341,8 @@
                         via phone numbers</b> (consulting &amp; lab testing) and appointment booking.<br>
                     - <b>SPA Management:</b> Handled legacy data migration and built treatment lifecycle tracking based
                     on <b>plan benefits</b>.<br>
-                    - <b>Unified Architecture:</b> Improved core systems to cleanly support Cloud resources, Healthcare
-                    benefits, and SPA treatments under <b>one unified logic</b> without creating separate management
-                    models for each.
+                    - <b>Common Approach:</b> Helped adapt core systems to cleanly support Cloud resources, Healthcare
+                    benefits, and SPA treatments under <b>a consistent model</b> to reduce duplicate logic.
                 </div>
                 <div class="tl-tags"><span class="tag hi">TRUEDOC</span><span class="tag">Multi-tenant</span><span
                         class="tag">SPA Treatment</span><span class="tag">Unified Model</span><span class="tag">Data
