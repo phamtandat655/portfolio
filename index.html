@@ -850,12 +850,11 @@
         <button class="mobile-menu-btn"
             onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#story">Career</a></li>
             <li><a href="#cv">Resume</a></li>
-            <li><a href="#contact" class="nav-cta">Contact</a></li>
+            <li><a href="#contact" class="nav-cta">About & Contact</a></li>
         </ul>
     </nav>
 
@@ -926,45 +925,7 @@
 
     <hr class="div" />
 
-    <!-- ABOUT -->
-    <section class="sec" id="about">
-        <h2>About</h2>
-        <p class="sec-sub">A quick snapshot of who I am outside the code.</p>
-        <div class="about-grid">
-            <div class="about-card">
-                <h3>Personal Info</h3>
-                <p>📞 <a href="tel:0394047655">0394 047 655</a></p>
-                <p>✉️ <a href="mailto:phamtandat655@gmail.com">phamtandat655@gmail.com</a></p>
-                <p>📍 Quận 5, Ho Chi Minh City</p>
-            </div>
-            <div class="about-card">
-                <h3>🎓 Education</h3>
-                <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem">
-                    <div style="width: 100%;display: flex;justify-content: space-between;align-items: center;">
-                        <p style="font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.2rem">Sai Gon
-                            University
-                        </p>
-                        <div style="font-size:1rem;font-weight:700;color:var(--accent);line-height:1">
-                            GPA 3.1 / 4.0
-                        </div>
-                    </div>
-                    <div>
 
-                        <p style="color:var(--accent2);font-size:.88rem;font-weight:600;margin-bottom:.5rem">Bachelor of
-                            Software Engineering &nbsp;·&nbsp; Nov 2025</p>
-                        <p style="font-size:.83rem;color:var(--muted);max-width:560px;line-height:1.7">Studied core
-                            computer
-                            science fundamentals including data structures, algorithms, databases, and software
-                            engineering
-                            principles, with a focus on backend system development.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <hr class="div" />
 
     <!-- SKILLS -->
     <section class="sec" id="skills">
@@ -1392,9 +1353,32 @@
 
     <!-- CONTACT -->
     <section class="sec" id="contact">
-        <h2>Get in Touch</h2>
-        <p class="sec-sub">Currently looking for Backend Java opportunities where I can work on scalable systems and
-            service-oriented architectures.</p>
+        <h2>About & Get in Touch</h2>
+        <p class="sec-sub">Currently looking for Backend Java opportunities.</p>
+
+        <div class="about-grid" style="margin-bottom: 2rem;">
+            <div class="about-card" style="grid-column: 1 / -1;">
+                <h3
+                    style="font-size: .85rem; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; font-weight: 600; margin-bottom: 1rem;">
+                    🎓 Education</h3>
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem">
+                    <div style="width: 100%;display: flex;justify-content: space-between;align-items: center;">
+                        <p style="font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.2rem">Sai Gon
+                            University</p>
+                        <div style="font-size:1rem;font-weight:700;color:var(--accent);line-height:1">GPA 3.1 / 4.0
+                        </div>
+                    </div>
+                    <div>
+                        <p style="color:var(--accent2);font-size:.88rem;font-weight:600;margin-bottom:.5rem">Bachelor of
+                            Software Engineering &nbsp;·&nbsp; Nov 2025</p>
+                        <p style="font-size:.86rem;color:var(--muted);max-width:700px;line-height:1.7">Studied core
+                            computer science fundamentals including data structures, algorithms, databases, and software
+                            engineering principles, with a focus on backend system development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="contact-grid">
             <a href="mailto:phamtandat655@gmail.com" class="contact-card">
                 <div class="contact-icon">✉️</div>
@@ -1406,6 +1390,11 @@
                 <div class="contact-lbl">Phone</div>
                 <div class="contact-val">0394 047 655</div>
             </a>
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <div class="contact-lbl">Location</div>
+                <div class="contact-val">Quận 5, HCM City</div>
+            </div>
             <a href="https://github.com/phamtandat655?tab=repositories" target="_blank" class="contact-card">
                 <div class="contact-icon">🐙</div>
                 <div class="contact-lbl">GitHub</div>
