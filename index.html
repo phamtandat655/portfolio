@@ -33,6 +33,30 @@
             --muted: #64748b;
             --shadow: 0 2px 16px rgba(37, 99, 235, .08);
             --shadow-hover: 0 8px 32px rgba(37, 99, 235, .16);
+            --nav-bg: 255, 255, 255;
+        }
+
+        body.dark {
+            --bg: #0b0f19;
+            --bg2: #161f30;
+            --bg3: #1e293b;
+            --surface: #0f172a;
+            --border: #1e293b;
+            --border2: #334155;
+            --accent: #3b82f6;
+            --accent2: #60a5fa;
+            --accent3: #93c5fd;
+            --green: #10b981;
+            --text: #f8fafc;
+            --text2: #cbd5e1;
+            --muted: #94a3b8;
+            --shadow: 0 4px 24px rgba(0, 0, 0, .4);
+            --shadow-hover: 0 10px 32px rgba(0, 0, 0, .6);
+            --nav-bg: 11, 15, 25;
+        }
+
+        body, nav, .nav-links, .skill-cat, .proj-card, .btn, .social-chip, .contact-card, .doc-card, .about-card, .bar-track, hr.div, .theme-toggle-btn {
+            transition: background 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         html {
@@ -67,7 +91,7 @@
             left: 0;
             right: 0;
             z-index: 200;
-            background: rgba(255, 255, 255, .9);
+            background: rgba(var(--nav-bg), .9);
             backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border);
             height: 62px;
@@ -89,6 +113,26 @@
             gap: 1.75rem;
             list-style: none;
             align-items: center
+        }
+
+        .theme-toggle-btn {
+            background: none;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle-btn:hover {
+            background: var(--bg2);
+            color: var(--accent);
         }
 
         .mobile-menu-btn {
@@ -808,7 +852,7 @@
                 top: 62px;
                 left: 0;
                 right: 0;
-                background: rgba(255, 255, 255, .95);
+                background: rgba(var(--nav-bg), .95);
                 backdrop-filter: blur(14px);
                 flex-direction: column;
                 padding: 1.5rem;
@@ -846,9 +890,32 @@
 <body>
 
     <nav>
-        <div class="nav-logo">tandat.dev</div>
-        <button class="mobile-menu-btn"
-            onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
+        <div class="nav-logo" style="display:flex; align-items:center; gap:0.5rem;">
+            <span style="font-size:1.15rem; font-weight:800; background:linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">tandatcorp.id.vn</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+            <!-- Theme Toggle Button -->
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                <!-- Sun Icon -->
+                <svg class="sun-icon" style="display:none;" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="1" x2="12" y2="3" line-cap="round" />
+                    <line x1="12" y1="21" x2="12" y2="23" line-cap="round" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" line-cap="round" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" line-cap="round" />
+                    <line x1="1" y1="12" x2="3" y2="12" line-cap="round" />
+                    <line x1="21" y1="12" x2="23" y2="12" line-cap="round" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" line-cap="round" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" line-cap="round" />
+                </svg>
+                <!-- Moon Icon -->
+                <svg class="moon-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" line-cap="round" />
+                </svg>
+            </button>
+            <button class="mobile-menu-btn"
+                onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
+        </div>
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -868,31 +935,24 @@
             <div>
                 <h1>Pham Tan Dat</h1>
             </div>
-            <p class="hero-role">Backend Java Developer</p>
+            <p class="hero-role">Backend Java Developer | Spring Boot | REST APIs | Microservices</p>
             <p class="hero-desc" style="margin-bottom: 1.5rem; text-align: center;">
-                Backend Java Developer with 1+ year experience building production systems in domain, cloud, and
-                healthcare
-                platforms.
-                Focused on designing service lifecycles, ensuring state consistency, and preventing billing/resource
-                issues in large-scale systems.
+                Backend Java Developer with production experience building Spring Boot-based backend platforms across cloud services, domain registration, and healthcare systems. Strong in REST API design, service lifecycle management, database-backed business workflows, and cross-functional delivery.
             </p>
             <div
                 style="text-align:left; max-width: 580px; margin: 0 auto 2.5rem; background: var(--surface); border: 1.5px solid var(--border); border-radius: 14px; padding: 1.5rem;">
                 <h3
                     style="font-size:.95rem; color: var(--text); margin-bottom:.85rem; display:flex; align-items:center; gap:.5rem;">
-                    <span style="color:var(--accent);">🎯</span> What I Focus On
+                    <span style="color:var(--accent);">🎯</span> Highlights & Focus
                 </h3>
                 <ul
                     style="list-style:none; padding:0; margin:0; font-size:.86rem; color:var(--text2); display:flex; flex-direction:column; gap:.7rem;">
                     <li style="display:flex; align-items:flex-start; gap:.5rem;"><span
-                            style="color:var(--green); font-weight:bold;">✓</span> <span>Designing explicit state
-                            machines for complex service lifecycles</span></li>
+                            style="color:var(--green); font-weight:bold;">✓</span> <span><b>Improved operational efficiency by up to 40%</b> through automated VM lifecycle and DC migrations</span></li>
                     <li style="display:flex; align-items:flex-start; gap:.5rem;"><span
-                            style="color:var(--green); font-weight:bold;">✓</span> <span>Aligning inconsistent states
-                            across independent domains (cloud, subscription, healthcare)</span></li>
+                            style="color:var(--green); font-weight:bold;">✓</span> <span><b>Reduced duplicated backend logic by 30%</b> by refactoring service lifecycle modules across 3+ domains</span></li>
                     <li style="display:flex; align-items:flex-start; gap:.5rem;"><span
-                            style="color:var(--green); font-weight:bold;">✓</span> <span>Preventing billing & resource
-                            drift via centralized validation</span></li>
+                            style="color:var(--green); font-weight:bold;">✓</span> <span><b>Delivered .VN domain platform</b> with <b>0 critical post-release incidents</b></span></li>
                 </ul>
             </div>
             <div class="hero-btns">
@@ -920,37 +980,36 @@
         <h3 style="margin-bottom: 5px;">Technical Skills</h3>
         <div class="skills-grid">
             <div class="skill-cat">
-                <h3>💻 Programming Languages</h3>
-                <div class="tags"><span class="tag hi">Java</span><span class="tag">JavaScript</span></div>
+                <h3>💻 Backend Core</h3>
+                <div class="tags"><span class="tag hi">Java</span><span class="tag">Java Core</span></div>
             </div>
             <div class="skill-cat">
-                <h3>⚙️ Frameworks / Platforms</h3>
-                <div class="tags"><span class="tag hi">Spring Boot</span><span class="tag">Spring MVC</span><span
-                        class="tag">JSF</span><span class="tag">ReactJS</span><span class="tag">NextJS</span></div>
+                <h3>⚙️ Spring Ecosystem</h3>
+                <div class="tags"><span class="tag hi">Spring Boot</span><span class="tag">Spring MVC</span><span class="tag hi">Spring Security</span><span class="tag hi">Spring Data JPA</span><span class="tag">Hibernate</span><span class="tag">JWT</span></div>
             </div>
             <div class="skill-cat">
-                <h3>🎨 Frontend / UI</h3>
-                <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span
-                        class="tag">PrimeFaces</span></div>
+                <h3>🗄️ Database & Caching</h3>
+                <div class="tags"><span class="tag">SQL</span><span class="tag hi">MySQL</span><span class="tag">MongoDB</span><span class="tag hi">Redis</span></div>
             </div>
             <div class="skill-cat">
-                <h3>🗄️ Databases</h3>
-                <div class="tags"><span class="tag hi">MySQL</span><span class="tag">MongoDB</span></div>
+                <h3>🏗️ Architecture & Principles</h3>
+                <div class="tags"><span class="tag">OOP</span><span class="tag hi">SOLID</span><span class="tag">Design Patterns</span><span class="tag hi">Microservices</span><span class="tag hi">DDD basics</span><span class="tag">Event-driven basics</span></div>
             </div>
             <div class="skill-cat">
-                <h3>🛠️ Tools & DevOps</h3>
-                <div class="tags"><span class="tag">Git</span><span class="tag">GitLab CI/CD</span><span
-                        class="tag">Jenkins</span><span class="tag">ArgoCD</span></div>
+                <h3>📨 MQ & Integration</h3>
+                <div class="tags"><span class="tag">Kafka (theory)</span><span class="tag">RabbitMQ (theory)</span><span class="tag hi">API Integration</span><span class="tag hi">WebSocket</span></div>
             </div>
             <div class="skill-cat">
-                <h3>🏗️ Design & Architecture</h3>
-                <div class="tags"><span class="tag hi">SOLID</span><span class="tag hi">Microservices</span><span
-                        class="tag">Design Patterns</span></div>
+                <h3>🛠️ DevOps & Tools</h3>
+                <div class="tags"><span class="tag">Git</span><span class="tag hi">GitLab CI/CD</span><span class="tag">Jenkins</span><span class="tag">ArgoCD</span><span class="tag hi">Docker</span><span class="tag">Linux</span><span class="tag">Postman</span><span class="tag">JUnit</span></div>
             </div>
             <div class="skill-cat">
-                <h3>🧪 Testing</h3>
-                <div class="tags"><span class="tag">JUnit</span><span class="tag">Mockito</span><span
-                        class="tag">Postman</span></div>
+                <h3>🎨 Frontend</h3>
+                <div class="tags"><span class="tag">JavaScript</span><span class="tag hi">ReactJS</span><span class="tag hi">Next.js</span><span class="tag">JSF/PrimeFaces</span></div>
+            </div>
+            <div class="skill-cat">
+                <h3>🤝 Soft Skills</h3>
+                <div class="tags"><span class="tag hi">Problem Solving</span><span class="tag hi">Ownership</span><span class="tag">Team Collaboration</span><span class="tag">Requirement Clarification</span></div>
             </div>
         </div>
 
@@ -992,27 +1051,27 @@
         <div class="projects-grid">
             <div class="proj-card">
                 <div><span class="proj-badge badge-domain">🌐 Domain</span></div>
-                <div class="proj-title">.VN Domain Management System</div>
-                <div class="proj-desc">A full lifecycle domain system supporting VNNIC registrar operations.</div>
+                <div class="proj-title">.VN Domain Registration & Management System</div>
+                <div class="proj-desc">A production-ready domain registration, management, and compliance workflow system supporting official VNNIC registrar operations.</div>
                 <div class="proj-key">
                     <b>Key Contributions:</b>
                     <ul>
-                        <li>Implemented full domain lifecycle (registration, eKYC, renewals)</li>
-                        <li>Automated backend state transitions, processing daily domain operations</li>
-                        <li>Maintained VNNIC-compliant production system for live customer usage</li>
+                        <li>Delivered VNNIC-compliant registration, eKYC, renewal, transfer, and compliance workflows</li>
+                        <li>Owned backend features from requirement clarification, database/API design, to production release</li>
+                        <li>Standardized service-state and resource models across domain registry and internal platforms</li>
                     </ul>
                 </div>
                 <div class="proj-key">
                     <b>Impact:</b>
                     <ul>
-                        <li>Supported Long Van's official operation as a .VN domain provider</li>
+                        <li>Enabled a successful business launch with <b>0 critical post-release incidents</b></li>
                     </ul>
                 </div>
                 <div class="proj-key">
                     <b>Tech Highlights:</b>
                     <ul>
-                        <li>Designed explicit state machine for complex domain lifecycles</li>
-                        <li>Optimized REST APIs for reliable integration</li>
+                        <li>Designed robust, explicit state machines for complex domain registration lifecycles</li>
+                        <li>Built high-performance, compliant REST APIs and integrated secure VNNIC endpoints</li>
                     </ul>
                 </div>
                 <div class="proj-links">
@@ -1020,36 +1079,35 @@
                     <div style="margin-top: .3rem;">
                         - <a href="https://longvan.net/domain" target="_blank">https://longvan.net/domain</a><br>
                         <span style="color:var(--muted); margin-left: .6rem; display:block; margin-bottom:.3rem;">→
-                            Worked on domain registration modules in production system</span>
+                            Worked on core domain registration and compliance workflows</span>
                     </div>
                 </div>
                 <div class="proj-tags"><span class="tag hi">Spring Boot</span><span class="tag">eKYC</span><span
-                        class="tag">VNNIC</span><span class="tag">MySQL</span></div>
+                        class="tag">VNNIC Compliance</span><span class="tag">MySQL</span></div>
             </div>
 
             <div class="proj-card">
                 <div><span class="proj-badge badge-cloud">☁️ Cloud</span></div>
-                <div class="proj-title">Datacenter Sync & VM Lifecycle Management</div>
-                <div class="proj-desc">Contributed to Datacenter v1 to v2 synchronization and VM operations automation.
-                </div>
+                <div class="proj-title">VM Lifecycle & Data Center Migration Automation</div>
+                <div class="proj-desc">Contributed to VM lifecycle automation and seamless data center synchronization and migration workflows.</div>
                 <div class="proj-key">
                     <b>Key Contributions:</b>
                     <ul>
-                        <li>Built synchronization APIs for Datacenter v1 to v2 rollout</li>
-                        <li>Refactored VM deployment and resource tracking logic for accuracy</li>
-                        <li>Automated deployment pipelines, cutting manual provisioning steps by ~40%</li>
+                        <li>Automated VM deployment, resource tracking, and data center migration via Spring Boot REST APIs</li>
+                        <li>Standardized virtual machine state models and resource allocations across cloud platforms</li>
+                        <li>Implemented secure, automated data synchronization across independent physical datacenters</li>
                     </ul>
                 </div>
                 <div class="proj-key">
                     <b>Impact:</b>
                     <ul>
-                        <li>Ensured zero-downtime data center synchronization for production VMs</li>
+                        <li>Reduced manual engineering effort by approximately <b>40%</b> and lowered deployment-error risk</li>
                     </ul>
                 </div>
                 <div class="proj-key">
                     <b>Tech Highlights:</b>
                     <ul>
-                        <li>Handled concurrent state updates and cross-version data sync</li>
+                        <li>Optimized database queries and API sync times for live virtualization clusters</li>
                     </ul>
                 </div>
                 <div class="proj-links">
@@ -1060,69 +1118,66 @@
                         - <a href="https://longvan.net/cloud-datacenter"
                             target="_blank">https://longvan.net/cloud-datacenter</a><br>
                         <span style="color:var(--muted); margin-left: .6rem; display:block; margin-bottom:.3rem;">→
-                            Worked on cloud VM lifecycle modules in production system</span>
+                            Worked on cloud VM lifecycle automation and migration sync</span>
                     </div>
                 </div>
-                <div class="proj-tags"><span class="tag hi">Spring Boot</span><span class="tag">CI/CD</span><span
-                        class="tag">VM Mgmt</span><span class="tag">Automation</span></div>
+                <div class="proj-tags"><span class="tag hi">Spring Boot</span><span class="tag">VM Lifecycle</span><span
+                        class="tag">DC Migration</span><span class="tag">REST APIs</span></div>
             </div>
 
             <div class="proj-card featured">
                 <div><span class="proj-badge badge-cloud">⚙️ Platform</span> <span class="proj-badge"
                         style="background:var(--accent);color:#fff">⭐ Featured</span></div>
-                <div class="proj-title">Service Platform Overhaul</div>
-                <div class="proj-desc">Main backend contributor in the service team for improving Long Van's core
-                    service management.
-                </div>
+                <div class="proj-title">Service Platform Refactoring & Unification</div>
+                <div class="proj-desc">Main backend contributor in a cross-functional team optimizing core service management and subscriptions.</div>
                 <div class="proj-key">
                     <b>Key Contributions:</b>
                     <ul>
-                        <li>Standardized core service engine as main backend contributor in small team</li>
-                        <li>Redesigned resource allocation logic, handling thousands of active subscriptions</li>
-                        <li>Delivered REST APIs and JSF admin portals for cross-platform integration</li>
+                        <li>Refactored core modules for service scaling, plans, upgrades, and renewals across 3+ domains</li>
+                        <li>Centralized service-state rules to prevent discrepancies and keep platform alignment</li>
+                        <li>Built internal REST APIs and admin control portals for business operations self-service</li>
                     </ul>
                 </div>
                 <div class="proj-key">
                     <b>Impact:</b>
                     <ul>
-                        <li>Resolved cross-domain lifecycle inconsistencies, significantly reducing duplicated code</li>
+                        <li>Cut duplicated backend business logic by approximately <b>30%</b>, drastically boosting maintainability</li>
                     </ul>
                 </div>
                 <div class="proj-key">
                     <b>Tech Highlights:</b>
                     <ul>
-                        <li>Centralized validation logic to prevent billing and resource drift</li>
-                        <li>Optimized DB queries for tracking thousands of dynamic resources</li>
+                        <li>Centralized critical validations to prevent billing drift and resource discrepancies</li>
                     </ul>
                 </div>
-                <div class="proj-tags"><span class="tag hi">Spring Boot</span><span class="tag">Multi-domain</span><span
-                        class="tag">Refactoring</span><span class="tag">MongoDB</span></div>
+                <div class="proj-tags"><span class="tag hi">Spring Boot</span><span class="tag">Refactoring</span><span
+                        class="tag">Service Lifecycle</span><span class="tag">MongoDB</span></div>
             </div>
 
             <div class="proj-card featured">
                 <div><span class="proj-badge badge-health">🏥 Healthcare</span> <span class="proj-badge"
                         style="background:var(--accent);color:#fff">⭐ Featured</span></div>
-                <div class="proj-title">TRUEDOC — Healthcare Subscription System</div>
-                <div class="proj-desc">A multi-tenant healthcare system managing subscriptions as medical services.
-                </div>
+                <div class="proj-title">TRUEDOC — Healthcare & SPA Subscription Platform</div>
+                <div class="proj-desc">A multi-tenant healthcare subscription platform managing tracking, link benefits, and service lifecycles.</div>
                 <div class="proj-key">
                     <b>Key Contributions:</b>
                     <ul>
-                        <li>Implemented logic for unpaid, purchased, and unactivated subscription states</li>
-                        <li>Designed multi-tier logic (Personal, Family, Enterprise) for thousands of users</li>
-                        <li>Engineered Enterprise sub-subscription distribution via phone numbers</li>
+                        <li>Built multi-tenant subscription modules for benefit tracking, enterprise subscription distribution, and account linking</li>
+                        <li>Implemented shared business-rule processing for cloud, healthcare, and SPA service lifecycles</li>
+                        <li>Shipped internal REST APIs and operations admin dashboards allowing operations self-service</li>
                     </ul>
                 </div>
                 <div class="proj-key">
                     <b>Impact:</b>
                     <ul>
-                        <li>Adapted standard cloud models into healthcare logic for complex enterprise distribution</li>
+                        <li>Reduced domain-specific custom code by approx <b>25%</b></li>
+                        <li>Saved <b>5–10 engineering hours per week</b> for internal Operations teams</li>
                     </ul>
                 </div>
                 <div class="proj-key">
                     <b>Tech Highlights:</b>
                     <ul>
-                        <li>Modeled complex tenant hierarchies and hierarchical resource quotas</li>
+                        <li>Modeled complex tenant hierarchies and multi-channel resource allocations</li>
                     </ul>
                 </div>
                 <div class="proj-links">
@@ -1134,74 +1189,74 @@
                             Contributed to subscription lifecycle and benefit distribution system</span>
                     </div>
                 </div>
-                <div class="proj-tags"><span class="tag hi">Multi-tenant</span><span
-                        class="tag">Subscription</span><span class="tag">Enterprise</span><span class="tag">Spring
-                        Boot</span></div>
+                <div class="proj-tags"><span class="tag hi">Spring Boot</span><span class="tag">Multi-tenant</span><span
+                        class="tag">JSF/PrimeFaces</span><span class="tag">REST APIs</span></div>
             </div>
 
             <div class="proj-card featured">
                 <div><span class="proj-badge badge-spa">💆 SPA</span> <span class="proj-badge"
                         style="background:var(--accent);color:#fff">⭐ Featured</span></div>
-                <div class="proj-title">SPA Treatment Lifecycle System</div>
-                <div class="proj-desc">A service system adapting core lifecycle logic for SPA treatment management.
-                </div>
+                <div class="proj-title">SPA Treatment Lifecycle & Migration System</div>
+                <div class="proj-desc">A specialized service lifecycle system adapting core cloud models for SPA treatments and prepaid benefit packages.</div>
                 <div class="proj-key">
                     <b>Key Contributions:</b>
                     <ul>
-                        <li>Developed SPA treatment lifecycle flows from unpaid to activated sessions</li>
-                        <li>Executed secure data migration scripts for legacy SPA system data</li>
-                        <li>Implemented session tracking based on plan benefits to prevent over-usage</li>
+                        <li>Migrated treatment subscriptions to a new prepaid-to-activated-to-usage lifecycle model</li>
+                        <li>Built robust plan usage tracking to ensure accurate benefit consumption and prevent over-usage</li>
                     </ul>
                 </div>
                 <div class="proj-key">
                     <b>Impact:</b>
                     <ul>
-                        <li>Unified SPA logic with the core platform, delivering robust APIs for frontend</li>
+                        <li>Achieved <b>100% data integrity</b> with no reported data loss during live production migration transition</li>
                     </ul>
                 </div>
                 <div class="proj-key">
                     <b>Tech Highlights:</b>
                     <ul>
-                        <li>Handled complex schema migration safely without downtime</li>
+                        <li>Wrote secure database transition scripts for legacy SPA system data integration</li>
                     </ul>
                 </div>
                 <div class="proj-links">
                     <b>🔗 Live Systems:</b>
                     <div style="margin-top: .3rem;">
                         - <a href="https://longvan.vn/bubbly-spa" target="_blank">https://longvan.vn/bubbly-spa</a><br>
-                        <span style="color:var(--muted); margin-left: .6rem; display:block; margin-bottom:.3rem;">→
-                            Customer-facing SPA service platform</span>
                         - <a href="https://admin.saleone.vn/login"
                             target="_blank">https://admin.saleone.vn/login</a><br>
                         <span style="color:var(--muted); margin-left: .6rem; display:block; margin-bottom:.3rem;">→
-                            Internal admin portal (lifecycle & treatment management)</span>
+                            Worked on core treatment lifecycle and data migrations</span>
                     </div>
                 </div>
-                <div class="proj-tags"><span class="tag hi">Spring Boot</span><span class="tag">Data
-                        Migration</span><span class="tag">Treatment Mgmt</span><span class="tag">JSF</span></div>
+                <div class="proj-tags"><span class="tag hi">Spring Boot</span><span class="tag">Data Migration</span><span
+                        class="tag">Treatment Mgmt</span><span class="tag">JSF/PrimeFaces</span></div>
             </div>
 
             <div class="proj-card">
                 <div><span class="proj-badge badge-rt">💬 Real-time</span></div>
-                <div class="proj-title">Real-time Communication Platform</div>
-                <div class="proj-desc">A chat, group messaging, and voice/video platform.</div>
+                <div class="proj-title">Real-time WebSocket Chat Application</div>
+                <div class="proj-desc">A real-time communication platform supporting chat, group messaging, and voice/video call interfaces. Developed during STECH VN internship.</div>
                 <div class="proj-key">
                     <b>Key Contributions:</b>
                     <ul>
-                        <li>Built UI and messaging functionality using Next.js</li>
-                        <li>Integrated WebSocket with payload encryption</li>
-                        <li>Resolved cross-service real-time sync issues</li>
+                        <li>Developed responsive frontend messaging modules using React, Next.js, and WebSocket</li>
+                        <li>Created 10+ reusable, highly performant UI components to speed up delivery</li>
+                        <li>Resolved complex real-time connection and message synchronization issues</li>
                     </ul>
                 </div>
                 <div class="proj-key">
-                    <b>Engineering Highlights:</b>
+                    <b>Impact:</b>
                     <ul>
-                        <li>Built encrypted real-time communication — handling reconnection and message synchronization
-                            in Next.js</li>
+                        <li>Significantly improved real-time communication stability and overall product delivery speed</li>
                     </ul>
                 </div>
-                <div class="proj-tags"><span class="tag">Next.js</span><span class="tag">WebSocket</span><span
-                        class="tag">React</span><span class="tag">Encryption</span></div>
+                <div class="proj-key">
+                    <b>Tech Highlights:</b>
+                    <ul>
+                        <li>Optimized WebSocket connection state management and payload data integrity</li>
+                    </ul>
+                </div>
+                <div class="proj-tags"><span class="tag hi">Next.js</span><span class="tag hi">React</span><span
+                        class="tag">WebSocket</span><span class="tag">JavaScript</span></div>
             </div>
         </div>
     </section>
@@ -1215,59 +1270,40 @@
         <div class="timeline">
             <div class="tl-item">
                 <div class="tl-dot"></div>
-                <div class="tl-date">10 Dec 2024 — Team Service, Long Van</div>
-                <div class="tl-title">🌐 Launching .VN Domain Management System</div>
+                <div class="tl-date">Jun 2024 — Present</div>
+                <div class="tl-title">💻 Backend Java Developer — Long Van System Solutions</div>
                 <div class="tl-body">
-                    Worked as a Backend Java Developer to build Long Van's domain management system:<br>
-                    - Delivered complete lifecycle: <b>registration, eKYC, provisioning, and renewals</b>.<br>
-                    - Ensured end-to-end domain management from customer order to active usage.<br>
-                    - Collaborated directly with Tech Lead on production readiness for VNNIC compliance.
+                    Developing and maintaining core high-performance business applications:<br>
+                    - <b>Domain & VM Lifecycles:</b> Delivered a VNNIC-compliant .VN domain system with 0 critical incidents, automated VM provisioning (saving 40% manual effort), and standardized state models.<br>
+                    - <b>TRUEDOC & SPA Subscriptions:</b> Built multi-tenant healthcare subscription modules, successfully migrated SPA packages with 100% data integrity, and cut custom code by 25%.<br>
+                    - <b>Business Impact:</b> Cut duplicate logic by 30%, designed unified resource-state validation to prevent billing drift, and owned end-to-end features.
                 </div>
-                <div class="tl-tags"><span class="tag hi">Domain Lifecycle</span><span class="tag">eKYC</span><span
-                        class="tag">VNNIC</span><span class="tag">Spring Boot</span></div>
+                <div class="tl-tags"><span class="tag hi">Spring Boot</span><span class="tag">REST APIs</span><span class="tag">eKYC</span><span class="tag">VM Lifecycle</span><span class="tag">Multi-tenant</span></div>
             </div>
+            
             <div class="tl-item">
                 <div class="tl-dot"></div>
-                <div class="tl-date">Early 2025 — Team Cloud</div>
-                <div class="tl-title">☁️ Datacenter Sync &amp; VM Lifecycle Automation</div>
+                <div class="tl-date">Sep 2023 — Jan 2024</div>
+                <div class="tl-title">🎨 Frontend Developer Intern — STECH VN</div>
                 <div class="tl-body">
-                    Transitioned to handle <b>Datacenter synchronization (v1 to v2)</b> for customer rollout:<br>
-                    - Automated full <b>VM lifecycle workflows</b> (deployment, ensuring resource parameters,
-                    reservation).<br>
-                    - Handled auto-provisioning pipelines and <b>secure password management</b>.
+                    Contributed to real-time collaboration frontend systems:<br>
+                    - <b>Real-time Chat App:</b> Developed messaging, voice, and video call interfaces using Next.js, React, and WebSocket.<br>
+                    - <b>UI Engineering:</b> Built 10+ reusable UI components, speeding up release times.<br>
+                    - <b>Bug Resolution:</b> Solved 5+ WebSocket real-time data synchronization issues, improving connection stability.
                 </div>
-                <div class="tl-tags"><span class="tag hi">Cloud Infra</span><span class="tag">VM Mgmt</span><span
-                        class="tag">Automation</span><span class="tag">Datacenter Sync</span></div>
+                <div class="tl-tags"><span class="tag hi">Next.js</span><span class="tag">React</span><span class="tag hi">WebSocket</span><span class="tag">State Sync</span></div>
             </div>
+
             <div class="tl-item">
                 <div class="tl-dot"></div>
-                <div class="tl-date">Mid 2025 — Team Service</div>
-                <div class="tl-title">⚙️ Main Backend Contributor — Service Platform Overhaul</div>
+                <div class="tl-date">Aug 2021 — Oct 2025</div>
+                <div class="tl-title">🎓 Bachelor of Information Technology — Sai Gon University</div>
                 <div class="tl-body">
-                    Returned to Team Service as the main backend contributor to improve the core service engine:<br>
-                    - Improved <b>resource management, resource changes, plan changes, renewals, and usage</b>.<br>
-                    - Built internal admin portal UI using <b>JSF/PrimeFaces</b>.<br>
-                    - Provided robust <b>REST APIs</b> for frontend Web/App integration.
+                    Deepened foundational computer science and software development knowledge:<br>
+                    - Coursework covers: Data Structures & Algorithms, Database Systems, Software Engineering, Object-Oriented Programming.<br>
+                    - Maintained academic excellence with a <b>GPA of 3.1 / 4.0</b>, focusing on high-quality backend application patterns.
                 </div>
-                <div class="tl-tags"><span class="tag hi">Service Lifecycle</span><span class="tag">REST API</span><span
-                        class="tag">JSF/PrimeFaces</span><span class="tag">Refactoring</span></div>
-            </div>
-            <div class="tl-item">
-                <div class="tl-dot"></div>
-                <div class="tl-date">2025 — Outsource Projects</div>
-                <div class="tl-title">🏥 Multi-domain Expansion: Healthcare &amp; SPA</div>
-                <div class="tl-body">
-                    Developed backend systems mapping cloud concepts to specialized service lifecycles:<br>
-                    - <b>TRUEDOC:</b> Built subscriptions lifecycle handling <b>Enterprise sub-subscription distribution
-                        via phone numbers</b> (consulting &amp; lab testing) and appointment booking.<br>
-                    - <b>SPA Management:</b> Handled legacy data migration and built treatment lifecycle tracking based
-                    on <b>plan benefits</b>.<br>
-                    - <b>Common Approach:</b> Helped adapt core systems to cleanly support Cloud resources, Healthcare
-                    benefits, and SPA treatments under <b>a consistent model</b> to reduce duplicate logic.
-                </div>
-                <div class="tl-tags"><span class="tag hi">TRUEDOC</span><span class="tag">Multi-tenant</span><span
-                        class="tag">SPA Treatment</span><span class="tag">Unified Model</span><span class="tag">Data
-                        Migration</span></div>
+                <div class="tl-tags"><span class="tag hi">Java Core</span><span class="tag">Algorithms</span><span class="tag">Databases</span><span class="tag">OOP</span></div>
             </div>
         </div>
     </section>
@@ -1324,17 +1360,12 @@
                     🎓 Education</h3>
                 <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem">
                     <div style="width: 100%;display: flex;justify-content: space-between;align-items: center;">
-                        <p style="font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.2rem">Sai Gon
-                            University</p>
-                        <div style="font-size:1rem;font-weight:700;color:var(--accent);line-height:1">GPA 3.1 / 4.0
-                        </div>
+                        <p style="font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.2rem">Sai Gon University</p>
+                        <div style="font-size:1rem;font-weight:700;color:var(--accent);line-height:1">GPA 3.1 / 4.0</div>
                     </div>
                     <div>
-                        <p style="color:var(--accent2);font-size:.88rem;font-weight:600;margin-bottom:.5rem">Bachelor of
-                            Software Engineering &nbsp;·&nbsp; Nov 2025</p>
-                        <p style="font-size:.86rem;color:var(--muted);max-width:700px;line-height:1.7">Studied core
-                            computer science fundamentals including data structures, algorithms, databases, and software
-                            engineering principles, with a focus on backend system development.</p>
+                        <p style="color:var(--accent2);font-size:.88rem;font-weight:600;margin-bottom:.5rem">Bachelor of Information Technology &nbsp;·&nbsp; Aug 2021 – Oct 2025</p>
+                        <p style="font-size:.86rem;color:var(--muted);max-width:700px;line-height:1.7">Coursework covers: Data Structures & Algorithms, Database Systems, Software Engineering, Object-Oriented Programming, and scalable systems architectures.</p>
                     </div>
                 </div>
             </div>
@@ -1354,8 +1385,13 @@
             <div class="contact-card">
                 <div class="contact-icon">📍</div>
                 <div class="contact-lbl">Location</div>
-                <div class="contact-val">Quận 5, HCM City</div>
+                <div class="contact-val">Ho Chi Minh City, Vietnam</div>
             </div>
+            <a href="https://tandatcorp.id.vn" target="_blank" class="contact-card">
+                <div class="contact-icon">🌐</div>
+                <div class="contact-lbl">Website</div>
+                <div class="contact-val">tandatcorp.id.vn</div>
+            </a>
             <a href="https://github.com/phamtandat655" target="_blank" class="contact-card">
                 <div class="contact-icon">🐙</div>
                 <div class="contact-lbl">GitHub</div>
@@ -1368,7 +1404,7 @@
                 <div class="contact-val">Phạm Tấn Đạt</div>
             </a>
             <a href="https://www.facebook.com/tan.at.803732/" target="_blank" class="contact-card">
-                <div class="contact-icon">🌐</div>
+                <div class="contact-icon">🔗</div>
                 <div class="contact-lbl">Facebook</div>
                 <div class="contact-val">Phạm Tấn Đạt</div>
             </a>
@@ -1385,7 +1421,40 @@
         </p>
     </footer>
 
-    <script></script>
+    <script>
+        // Theme Toggle Script
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = themeToggle.querySelector('.sun-icon');
+        const moonIcon = themeToggle.querySelector('.moon-icon');
+
+        // Check for saved theme preference, otherwise use system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+            document.body.classList.add('dark');
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
+        } else {
+            document.body.classList.remove('dark');
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (document.body.classList.contains('dark')) {
+                document.body.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            } else {
+                document.body.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 
 </html>
